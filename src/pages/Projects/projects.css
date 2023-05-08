@@ -1,0 +1,50 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.projects-container h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.iten-projects {
+    text-align: center;
+    margin: 15px;
+    transition: .5s;
+}
+
+.iten-projects:hover {
+    transform: scale(1.1);
+}
+
+.iten-projects img {
+    width: 400px;
+    border-radius: 4px;
+}
+
+.iten-projects a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+
+    .projects-container {
+        width: 95%;
+    }
+
+    .iten-projects img {
+        width: 350px;
+    }
+
+}

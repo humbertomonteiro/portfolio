@@ -1,0 +1,53 @@
+.carrossel-container h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.div-carrossel {
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel {
+    cursor: grab;
+    overflow: hidden;
+}
+
+.inner {
+    display: flex;
+}
+
+.item {
+    max-height: 300px;
+    max-width: 400px;
+    padding: 14px;
+}
+
+.item a {
+    text-decoration: none;
+    color: #fff;
+    transition: .5s;
+}
+
+.item a:hover {
+    color: aqua;
+}
+
+.item img {
+    width: 380px;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+@media (max-width: 900px)  {
+    .carrossel-container {
+        max-width: 95%;
+    }
+
+    .item img {
+        width: 300px;
+    }
+}

@@ -1,0 +1,85 @@
+.profile-container {
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.article {
+    background-color: #080d1d;
+    width: 95%;
+    padding: 20px 10px;
+    max-width: 900px;
+    margin-bottom: 8px;
+}
+
+.article div .photo {
+    width: 200px;
+    border-radius: 4px;
+    margin: 0 10px;
+}
+
+.article h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.article ul li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.article-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+
+.contacts-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contacts-links a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: .5s;
+}
+
+.contacts-links a:hover {
+    color: aqua;
+}
+
+.contacts-links a span {
+    margin-right: 5px;
+}
+
+
+
+.course {
+    margin-bottom: 15px;
+}
+
+.course h3 {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+
+    .article div .photo {
+        width: 150px;
+        margin-bottom: 15px;
+    }
+
+    .article-img {
+        display: flex;
+        justify-content: flex-start;
+    }
+}
