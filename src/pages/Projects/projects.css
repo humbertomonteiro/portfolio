@@ -8,6 +8,7 @@
 .projects-container h1 {
     font-size: 2rem;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .projects {
@@ -15,6 +16,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    max-width: 1000px;
 }
 
 .iten-projects {

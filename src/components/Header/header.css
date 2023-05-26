@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
-    background-color: #080d1dcc;
+    padding: 10px 30px;
+    background-color: #080d1de7;
     height: 60px;
     position: fixed;
     top: 0;
@@ -34,6 +34,10 @@
 
 @media (max-width: 550px) {
 
+    .header {
+        padding: 10px;
+    }
+
     .links {
         display: none;
     }
@@ -63,6 +67,7 @@
         border-radius: 4px;
         opacity: 0;
         animation: slideXLeft .8s ease forwards;
+        z-index: 5;
     }
 }
 

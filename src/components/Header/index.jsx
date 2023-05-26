@@ -8,8 +8,7 @@ export default function Header() {
     function showLinks() {
         
         const links = document.querySelector('.links')
-
-        links.classList.toggle('links-hidden')
+        
         links.classList.toggle('show-links')
     }
 

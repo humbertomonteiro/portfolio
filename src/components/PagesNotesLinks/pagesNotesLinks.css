@@ -1,0 +1,131 @@
+.pages-notes-links {
+    background-color: #080d1de7;
+    border-top: 1px solid #ffffffc4;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pages-notes-links div nav {
+    min-width: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pages-notes-links div nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-hidden {
+    display: none;
+}
+
+.btn-show {
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+
+    .btn-notes-links{
+        position: fixed;
+        top: 61px;
+    }
+    
+    .btn-hidden, .btn-show {
+        font-size: .8rem;
+        width: 100%;
+        background-color: #080d1de7;
+        padding: 5px 0;
+        border-top: 1px solid #b8b8b8c2;
+        display: flex;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: .5s;
+    }
+
+    .btn-hidden:hover, .btn-show:hover {
+        color: aqua;
+    }
+
+    .btn-hidden {
+        position: fixed;
+        top: 210px;
+        opacity: 0;
+        animation: sliderBottom .8s ease forwards;
+    }
+
+    .btn-show {
+        position: fixed;
+        top: 60px;
+        opacity: 0;
+        animation: sliderTop 1s ease forwards;
+    }
+
+    .hidden-links-pages {
+        opacity: 0;
+        animation: sliderBottom .8s ease forwards;
+        display: none;
+    }
+
+    .show-links-pages {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .show-links-pages nav {
+        background-color: #080d1de7;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        position: fixed;
+        top: 61px;
+        opacity: 0;
+        animation: sliderBottom .8s ease forwards;
+    }
+
+    .show-links-pages nav a {
+        transition: .5s;
+    }
+
+    .show-links-pages nav a:hover {
+        color: aqua;
+    }
+} 
+
+@keyframes sliderBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sliderTop {
+    0% {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

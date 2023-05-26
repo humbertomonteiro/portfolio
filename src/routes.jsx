@@ -11,6 +11,8 @@ import Node from './pages/PagesNotes/Node'
 import React from './pages/PagesNotes/React'
 import Firebase from './pages/PagesNotes/Firebase'
 
+import ExempleRoute from "./components/ExemplesReact/ExempleRoutes/ExempleRoute";
+
 export default function RoutesApp() {
     return (
         <Routes>
@@ -18,12 +20,16 @@ export default function RoutesApp() {
             <Route path='/profile' element={ <Profile />} />
             <Route path='/notes' element={ <Notes />} />
             <Route path='/projects' element={ <Projects />} />
-
+            
             <Route path='/git' element={ <Git />} />
             <Route path='/github' element={ <Github />} />
             <Route path='/node' element={ <Node />} />
             <Route path='/react' element={ <React />} />
             <Route path='/firebase' element={ <Firebase />} />
+            
+            <Route path="/exempleRoutes" element={ <ExempleRoute /> } />
+
+            <Route path="*" element={ <Home /> } />
         </Routes>
     )
 }

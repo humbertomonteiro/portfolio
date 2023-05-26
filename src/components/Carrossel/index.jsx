@@ -10,9 +10,9 @@ export default function Carrossel() {
     const [ width, setWidth ] = useState(0)
 
     useEffect(() => {
-        console.log(carrossel.current?.scrollWidth,
-            carrossel.current?.offsetWidth)
+
         setWidth(carrossel.current?.scrollWidth - carrossel.current?.offsetWidth)
+        
     }, [])
 
     return(

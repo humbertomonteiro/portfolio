@@ -17,6 +17,7 @@ export default function Notes() {
         transition={{ duration: .5 }} className='notes-container'>
             <h1>Minhas anotações</h1>
             <div className="notes">
+
                 <div className="note">
                     <div className="note-icon">
                         <BsGit className='icon'/>
@@ -28,12 +29,12 @@ export default function Notes() {
                             lidar com tudo, desde projetos pequenos a 
                             muito grandes com velocidade e eficiência.
                         </p>
-                        <Link 
-                        className='note-btn'
-                        to='/git'
-                        >Ler Agora</Link>
+                        <div className='note-btn'>
+                            <Link  to='/git'>Abrir</Link>
+                        </div>
                     </div>
                 </div>
+
                 <div className="note">
                     <div className="note-icon">
                         <AiFillGithub className='icon'/>
@@ -45,12 +46,12 @@ export default function Notes() {
                             Projetado para colaboração. Celebrado 
                             pela segurança integrada. 
                         </p>
-                        <Link
-                        className='note-btn'
-                        to='/github'
-                        >Ler Agora</Link>
+                        <div className='note-btn'>
+                            <Link to='/github'>Abrir</Link>
+                        </div>
                     </div>
                 </div>
+
                 <div className="note">
                     <div className="note-icon">
                         <DiNodejsSmall className='icon'/>
@@ -61,12 +62,13 @@ export default function Notes() {
                             É um ambiente de tempo de execução 
                             JavaScript multiplataforma e de código.
                         </p>
-                        <Link
-                        className='note-btn'
-                        to='/node'
-                        >Ler Agora</Link>
+                        <div className='note-btn'>
+                            <Link to='/node'>Abrir</Link>
+                        </div>
+                        
                     </div>
                 </div>
+
                 <div className="note">
                     <div className="note-icon">
                         <DiReact className='icon'/>
@@ -78,12 +80,13 @@ export default function Notes() {
                             usuário a partir de peças individuais 
                             chamadas componentes. 
                         </p>
-                        <Link
-                        className='note-btn'
-                        to='/react'
-                        >Ler Agora</Link>
+                        <div className='note-btn'>
+                            <Link to='/react'>Abrir</Link>
+                        </div>
                     </div>
                 </div>
+
+                
                 <div className="note">
                     <div className="note-icon">
                         <SiFirebase className='icon'/>
@@ -95,10 +98,10 @@ export default function Notes() {
                             aplicativos que ajuda você a criar e 
                             desenvolver aplicativos e jogos.
                         </p>
-                        <Link
-                        className='note-btn'
-                        to='/firebase'
-                        >Ler Agora</Link>
+                        <div className='note-btn'>
+                            <Link to='/firebase'>Abrir</Link>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

@@ -47,12 +47,30 @@ export default function Projects() {
                     </a>
                 </div>
                 <div className="iten-projects">
+                    <a href="https://humbertomonteiro.github.io/sabiaguaba_park/index.html"
+                    target='_blanck' className='iten-projects'>
+                        <img src={require('../../assets/imgs/sabiaguaba-park.png')} alt="" />
+                        <h2>Landing Page - Sabiaguaba Park</h2>
+                        <h3>Tecnologias usadas:</h3>
+                        <p>HTML, CSS, JavaScript</p>
+                    </a>
+                </div>
+                <div className="iten-projects">
                     <a href="https://6380decf8f98a12e0dc6bf35--luminous-cranachan-d62d82.netlify.app/"
                     target='_blanck' className='iten-projects'>
                         <img src={require('../../assets/imgs/encurtarLink.png')} alt="" />
                         <h2>Encurtador de link</h2>
                         <h3>Tecnologias usadas:</h3>
                         <p>HTML, CSS, JavaScript e React.js</p>
+                    </a>
+                </div>
+                <div className="iten-projects">
+                    <a href="https://humastarefas.netlify.app/"
+                    target='_blanck' className='iten-projects'>
+                        <img src={require('../../assets/imgs/humas-tarefas.png')} alt="" />
+                        <h2>Humas Tarefas</h2>
+                        <h3>Tecnologias usadas:</h3>
+                        <p>HTML, CSS, JavaScript, React.js e fireBase</p>
                     </a>
                 </div>
                 <div className="iten-projects">

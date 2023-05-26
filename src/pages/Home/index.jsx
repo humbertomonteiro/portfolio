@@ -28,7 +28,7 @@ export default function Home() {
 
                     <p>
                         Estou procurando entrar nesse mundo com uma experiencia profissional para
-                        poder mostrar o que eu aprendi com os cursos e projetos pessoais que já fiz e quero principalmente
+                        poder mostrar o que eu aprendi com os cursos e projetos pessoais que já fiz e quero
                         aprender mais e mais, até me tornar um desenvolvedor full-stack.
                     </p>
                 </motion.div>

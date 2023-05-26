@@ -7,54 +7,47 @@
     overflow: hidden;
 }
 
-.pages-notes-container .pages-note-links {
-    position: fixed;
-    top: 60px;
-    background-color: #080d1dcc;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    height: 30px;
-    border-top: 1px solid #aaaaaa;
-}
-
-.pages-notes-container .pages-note-links a {
-    text-decoration: none;
-    color: #fff;
-    padding: 5px 0;
-    transition: .5s;
-}
-
-.pages-notes-container .pages-note-links a:hover {
-    color: aqua;
+.pages-notes-container h1 {
+    font-size: 2.5rem;
 }
 
 .pages-notes {
     max-width: 900px;
-    width: 90%;
+    width: 93%;
 }
 
 .pages-notes .pages-notes-text h2 {
     padding: 30px 0 10px 0;
+    font-size: 2.2rem;
 }
 
 .pages-notes .pages-notes-text h3 {
     padding: 10px 0;
+    font-size: 1.7rem;
+}
+
+.pages-notes .pages-notes-text h4 {
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.pages-notes .pages-notes-text p {
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 .pages-notes .pages-notes-text strong {
-    background-color: #d1d1d1a9;
-    padding: 1px;
-    color: #000;
-    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 1.1rem;
 }
 
 .pages-notes .pages-notes-text a {
     text-decoration: none;
-    color: #fff;
-    padding: 2px;
+    color: aqua;
+    padding: 4px;
     margin: 2px;
     background-color: #080d1dcc;
+    border-radius: 4px;
     transition: .5s;
 }
 
@@ -66,11 +59,33 @@
     overflow-x: scroll;
     padding: 10px;
     background-color: #080d1dcc;
+    margin: 15px 0;
 }
 
 .pages-notes .pages-notes-text pre::-webkit-scrollbar {
     display: none;
 }
+
+.pages-notes .pages-notes-text ul li {
+    margin: 10px 0 10px 15px;
+}
+
+.pages-notes .pages-notes-text article {
+    background-color: #ffffffd7;
+    color: #000 ;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 30px 0;
+}
+
+.pages-notes .pages-notes-text article h3 {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    margin: -10px -10px 10px -10px;
+    border-radius: 4px 4px 0 0;
+}
+
 
 
 .div-video {
@@ -80,6 +95,9 @@
     margin: 30px 0 20px 0;
 }
 
+.div-video iframe {
+    border-radius: 4px;
+}
 
 
 
@@ -93,21 +111,147 @@
 .div-img img {
     max-width: 600px;
     border-radius: 4px;
-    width: 90%;
+    width: fit-content;
 }
 
 
 
 
 .div-bg {
+    display: flex;
     position: fixed;
-    top: 15%;
+    top: 25%;
     right: 0;
     z-index: -1;
-    opacity: .1;
+    opacity: 0;
+    animation: sliderLeft .8s ease forwards;
+    animation-delay: .6s;
 }
 
 .div-bg .div-bg-icon {
     font-size: 300px;
 }
 
+
+
+
+.exemple {
+    background-color: #ffffffe5;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+    margin: 30px 0;
+    border-radius: 4px;
+}
+
+.exemple button {
+    background-color: #080d1dcc;
+    color: #fff;
+    border: 0;
+    padding: 4px 15px;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.exemple input {
+    border: 0;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.exemple article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.exemple strong {
+    margin-bottom: 10px;
+}
+
+.exemple img {
+    max-width: 600px;
+    width: 90%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.exemple p {
+    max-width: 600px;
+    width: 90%;
+}
+
+.exemple ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pages-notes-container .exemple ul li {
+    list-style: none;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffffd7;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.pages-notes-container .exemple ul li div {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.routes-exemple {
+    padding-top: 80px;
+}
+
+
+
+
+
+.hidden {
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+    .div-img img {
+        max-width: 100%;
+    }
+
+}
+
+@keyframes sliderTop {
+    0% {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sliderLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translateX(0);
+    }
+}
