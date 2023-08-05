@@ -3,6 +3,7 @@ import './profile.css'
 import { AiOutlineInstagram, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
 import Carrossel from '../../components/Carrossel'
+import Slider from '../../components/Slider'
 
 import { motion } from 'framer-motion'
 
@@ -49,11 +50,13 @@ export default function Profile() {
                 <div className='about'>
                     <h2>Sobre</h2>
                     <p>
-                        Constante aprendiz. Quero proporcionar melhorias de negócios, adquirir e compartilhar
-                        conhecimentos de forma justa e ética. contribuir para negócios sustentáveis, benefícios
-                        mútuos e criação de valor de longo prazo. Utilizo a linguagem de programação JavaScript
-                        e as tecnologias HTML e CSS junto com o REACT.js em projetos pessoais e pretendo evoluir
-                        meus conhecimentos para entrar na área de desenvolvimento web como front-end.
+                    Desenvolvedor Front-End com experiência em criação de interfaces interativas e responsivas, 
+                    buscando contribuir para projetos desafiadores.
+                    </p>
+                    <p>
+                    Habilidades em HTML5, CSS3, JavaScript, React, 
+                    bem como conhecimentos em design responsivo e boas práticas de desenvolvimento. Excelente 
+                    capacidade de trabalhar em equipe, resolver problemas e adaptar-se a novas tecnologias rapidamente.
                     </p>
                 </div>
             </div>
@@ -68,8 +71,7 @@ export default function Profile() {
                     <div className='course'>
                         <h3>Web moderno</h3>
                         <ul>
-                            <li>Instituição: Cod3r</li>
-                            <li>Plataforma: Udemy</li>
+                            <li>Instituição: Udemy / Cod3r</li>
                             <li>Professor: Leonardo Leitão</li>
                         </ul>
                         <p>Tecnologias:</p>
@@ -81,9 +83,8 @@ export default function Profile() {
                     <div className='course'>
                         <h3>Web completo</h3>
                         <ul>
-                            <li>Plataforma: Udemy</li>
-                            <li>Professor: Jorge Sant Ana</li>
-                            <li>Professor: Jamilton Damasceno</li>
+                            <li>Instituição: Udemy</li>
+                            <li>Professor: Jorge Sant Ana / Jamilton Damasceno</li>
                         </ul>
                         <p>Tecnologias:</p>
                         <p>
@@ -101,7 +102,7 @@ export default function Profile() {
                     <li>Sistemas</li>
                 </ul>
             </div>
-
+            <Slider />
         </motion.div>
     )
 }

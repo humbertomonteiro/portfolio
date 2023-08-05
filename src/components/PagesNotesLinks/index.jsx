@@ -6,47 +6,51 @@ import { useState } from 'react'
 
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
+import { notes } from '../../dates/ArrayNotes'
+
 export default function PagesNotesLinks() {
 
-    const [ show, setShow ] = useState(true)
+    const [ show, setShow ] = useState(false)
 
     function showNotesLinks() {
 
         setShow(!show) 
+        window.scroll(0, 0)
         
-        const linksPages = document.querySelector('[boxlinkspages]')
+    }
 
-        if(show) {
-            linksPages.classList.remove('hidden-links-pages')
-            linksPages.classList.add('show-links-pages')
-        } else {
-            linksPages.classList.add('hidden-links-pages')
-            linksPages.classList.remove('show-links-pages')
-        }
-  
+    function showNotesLinksButton() {
+
+        setShow(!show) 
+        
     }
 
     return (
         <div className='pages-notes-links'>
-            <div boxlinkspages='true' className="hidden-links-pages">
+            <div boxlinkspages='true' className={show ? 'show-links-pages' : 'hidden-links-pages'}>
 
                 <nav className='links-pages'>
-                    <Link to="/git">Git</Link>
-                    <Link to="/github">GitHub</Link>
-                    <Link to="/node">Node JS</Link>
-                    <Link to="/react">React JS</Link>
-                    <Link to="/firebase">Firebase</Link>
+
+                    {
+                    notes.map(e => (
+                        <>
+                        <Link onClick={showNotesLinks} 
+                        to={`/pages-notes/${e.id}`}
+                        >{e.title}</Link>
+                        </>
+                    ))
+                    }
                 </nav>
 
             </div>
             {
-                show ?
-                <div onClick={showNotesLinks} className='btn-show'>
+                !show ?
+                <div onClick={showNotesLinksButton} className='btn-show'>
                     <span>Anotações</span>
                     <IoIosArrowDown />
                 </div>   
                     :
-                    <div onClick={showNotesLinks} className='btn-hidden'>
+                    <div onClick={showNotesLinksButton} className='btn-hidden'>
                         <IoIosArrowUp />
                         <span>Anotações</span>
                     </div>

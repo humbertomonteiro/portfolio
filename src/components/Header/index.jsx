@@ -3,27 +3,33 @@ import { Link } from 'react-router-dom'
 
 import { GoThreeBars } from 'react-icons/go'
 
+import { useState } from 'react'
+
 export default function Header() {
 
-    function showLinks() {
-        
-        const links = document.querySelector('.links')
-        
-        links.classList.toggle('show-links')
+    const [ toggle, setToggle ] = useState(false)
+
+    function handleToggle() {
+        setToggle(!toggle)
+        window.scroll(0, 0)
+    }
+
+    function handleBars() {
+        setToggle(!toggle)
     }
 
     return (
         <div className='header'>
             <Link className='logo' to='/'>Portfolio</ Link>
 
-            <nav className='links'>
-                <Link to='/'>Home</Link>
-                <Link to='/profile' >Portifolio</Link>
-                <Link to='/notes' >Anotações</Link>
-                <Link to='/projects'>Projetos</Link>
+            <nav className={toggle ? 'show-links' : 'links'}>
+                <Link onClick={handleToggle} to='/'>Home</Link>
+                <Link onClick={handleToggle} to='/profile' >Portfolio</Link>
+                <Link onClick={handleToggle} to='/projects'>Projetos</Link>
+                <Link onClick={handleToggle} to='/notes' >Anotações</Link>
             </nav>
 
-            <GoThreeBars onClick={showLinks} className='bars links-hidden' />
+            <GoThreeBars onClick={handleBars} className='bars' />
 
         </div>
     )

@@ -5,7 +5,8 @@ footer {
     align-items: center;
     background-color: #080d1d;
     height: 80px;
-    border-top: 1px solid #cacaca;
+    margin-top: 50px;
+    border-top: 1px solid #a5a5a5;
 }
 
 footer a {
@@ -28,7 +29,7 @@ footer .footer-medias {
 
 footer .footer-medias a {
     font-size: .9rem;
-    color: #cacaca;
+    color: #a5a5a5;
     width: 100px;
 }
 

@@ -34,10 +34,10 @@
 
 @media (max-width: 600px) {
 
-    .btn-notes-links{
-        position: fixed;
-        top: 61px;
+    .links-pages a {
+        padding: 8px 0;
     }
+
     
     .btn-hidden, .btn-show {
         font-size: .8rem;
@@ -55,12 +55,11 @@
     }
 
     .btn-hidden:hover, .btn-show:hover {
-        color: aqua;
+        color: var(--color-2);
     }
 
     .btn-hidden {
         position: fixed;
-        top: 210px;
         opacity: 0;
         animation: sliderBottom .8s ease forwards;
     }
@@ -69,12 +68,12 @@
         position: fixed;
         top: 60px;
         opacity: 0;
-        animation: sliderTop 1s ease forwards;
+        animation: sliderBottom 1s ease forwards;
     }
 
     .hidden-links-pages {
         opacity: 0;
-        animation: sliderBottom .8s ease forwards;
+        animation: sliderTop .8s ease forwards;
         display: none;
     }
 
@@ -90,9 +89,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 150px;
         position: fixed;
-        top: 61px;
+        top: 95px;
         opacity: 0;
         animation: sliderBottom .8s ease forwards;
     }
@@ -102,7 +100,7 @@
     }
 
     .show-links-pages nav a:hover {
-        color: aqua;
+        color: var(--color-2);
     }
 } 
 

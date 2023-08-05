@@ -4,7 +4,7 @@ export default function ExempleRoute() {
     return (
         <div className="routes-exemple">
             <h1>Exemplo de Rota 1</h1>
-            <Link to='/react'>Home</Link>
+            <Link to='/pages-notes/react'>Home</Link>
         </div>
     )
 }

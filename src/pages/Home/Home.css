@@ -3,30 +3,48 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 60px;
+}
+
+.home-content {
+    margin: 10px 0 50px 0;
+}
+
+.home-content-text {
+    max-width: 500px;
+}
+
+.home-span {
+    font-size: 1.8rem;
 }
 
 .home-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .home-name {
-    font-size: 2.5rem;
-    color: aqua;
+    background-image: linear-gradient(to right, var(--color-2), var(--color-3));
+    background-clip: text;
+    font-size: 5rem;
+    line-height: 80px;
+    color: transparent;
+    font-weight: 800;
 }
 
 .home-content p {
     max-width: 500px;
     margin-top: 15px;
+    color: var(--color-3);
 }
 
 .home-content-btn {
-    margin-top: 20px;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;    
+    justify-content: space-between;
+    padding: 0 10px;
 }
 
-.home-content-btn a {
+.home-content-btn .btn-1 {
     font-size: 2.2rem;
     color: #fff;
     border: 1px solid #fff;
@@ -41,32 +59,73 @@
     transition: .5s;
 }
 
-.home-content-btn a:hover {
+.home-content-btn .btn-1:hover {
     transform: scale(1.2);
 }
 
-.home-img img {
+.btn-2 {
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    transition: .5s;
+}
+
+.btn-2:hover {
+    transform: scale(1.1);
+}
+
+.home-img {
     width: 500px;
-    opacity: 0; 
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-img img {
+    width: 750px;
+    object-fit: cover;
     animation: zoomIn 1s ease forwards, floatImg 4s ease-in-out infinite;
     animation-delay: .1s, 1s;
 }
 
 @media (max-width: 600px) {
 
+
     .home-content {
-        width: 90%;
+        width: 100%;
+        margin: 0 0 20px 0;
+        background-color: var(--color-5);
+        padding: 20px 20px 20px 20px;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    .home-span {
+        font-size: 1.3rem;
     }
 
+    .home-name {
+        font-size: 3.5rem;
+        line-height: 60px;
+    }
+
+    .home-text {
+        font-size: 1.8rem;
+    }
+
+
     .home-img {
-        margin: 15px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 350px;
     }
 
     .home-img img {
-        width: 90%;
+        width: 500px;
     }
 }
 

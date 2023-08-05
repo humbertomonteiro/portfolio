@@ -8,12 +8,11 @@
 
 .notes-container h1 {
     font-size: 2rem;
-    margin-bottom: 15px;
+    margin: 10px 0 30px 0;
 }
 
 .notes {
-    padding: 10px;
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     display: flex;
     flex-wrap: wrap;
@@ -23,21 +22,29 @@
 
 .note {
     width: 400px;
-    height: 220px;
+    max-width: 47%;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 10px;
-    margin: 10px;
-    box-shadow: -2px 2px 4px black;
-    border-radius: 4px;
-    border: 1px solid #fff;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #a5a5a5;
+    background-color: var(--color-5);
 }
 
 .note h2 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    padding: 0 10px;
 }
+
+.note p {
+    color: var(--color-3);
+    padding: 0 10px 10px 10px;
+    height: 60px
+}
+
 .note-icon {
     min-width: 200px;
     display: flex;
@@ -45,44 +52,65 @@
     align-items: center;
 }
 
-.note-icon .icon {
+.note-icon svg {
     font-size: 120px;
-    margin-right: 10px;
+    margin: 10px 0;
 }
 
 .note-text .note-btn {
+    width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #fff;
-    color: #000;
-    padding: 5px 20px;
-    margin: 10px 0;
-    border-radius: 4px;
     font-weight: bold;
+    border-top: 1px solid #a5a5a5;
     font-size: 1rem;
     cursor: pointer;
-    text-decoration: none;
+    margin-top: 20px;
     transition: .5s;
 }
 
 .note-text .note-btn a {
     text-decoration: none;
-    color: #000;
+    color: var(--color-3);
     text-align: center;
+    padding: 10px;
+    transition: .5s;
 }
 
-.note-text .note-btn:hover {
-    background-color: aqua;
-    color: #fff;
+.note-text .note-btn a:hover {
+    transform: scale(1.1);
+    color: var(--color-2);
+}
+
+
+@media (max-width: 890px) {
+
+
+    .note-icon .icon {
+        font-size: 90px;
+    }
 }
 
 @media (max-width: 600px) {
-    .note {
-        height: 300px;
+
+    .note-icon .icon {
+        font-size: 70px;
     }
 
-    .note-icon {
-        min-width: 140px;
+    .note h2 {
+        font-size: 1.2rem;
     }
 
+    .note p {
+        font-size: .8rem;
+    }
+
+}
+
+
+@media (max-width: 490px) {
+
+    .note p {
+        height: 75px
+    }
 }

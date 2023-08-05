@@ -1,3 +1,7 @@
+.carrossel-container {
+    margin: 0px auto;
+}
+
 .carrossel-container h1 {
     font-size: 2rem;
     text-align: center;
@@ -5,10 +9,11 @@
 }
 
 .div-carrossel {
-    max-width: 900px;
+    width: 1050px;
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
 }
 
 .carrossel {
@@ -21,9 +26,8 @@
 }
 
 .item {
-    max-height: 300px;
-    max-width: 400px;
-    padding: 14px;
+    max-width: 300px;
+    margin-left: 15px;
 }
 
 .item a {
@@ -33,21 +37,51 @@
 }
 
 .item a:hover {
-    color: aqua;
+    color: var(--color-2);
 }
 
-.item img {
-    width: 380px;
-    border-radius: 4px;
+.item a abbr {
+    text-decoration: none;
+}
+
+.item a abbr h2 {
+    margin: 5px 0 0 0;
+    font-size: 1.3rem;
+}
+
+.item a p {
+    color: var(--color-4);
+}
+
+.item-img {
+    width: 300px;
+    height: 140px;
+    overflow: hidden;
+}
+
+.item-img img {
+    width: 300px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
     pointer-events: none;
 }
 
-@media (max-width: 900px)  {
+@media (max-width: 900px) {
     .carrossel-container {
-        max-width: 95%;
+        max-width: 100%;
     }
 
     .item img {
         width: 300px;
     }
+}
+
+
+@media (max-width: 600px) {
+
+    .carrossel-container h1 {
+        font-size: 1.8rem;
+    }
+
 }

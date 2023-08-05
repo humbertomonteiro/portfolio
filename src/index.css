@@ -1,3 +1,13 @@
+:root {
+  --color-1: #0d142e;
+  --color-2: #A854C5;
+  --color-3: #f0f0f0;
+  --color-4: #a5a5a5;
+  --color-5: #080d1d;
+  --color-6: #0E0556;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +16,6 @@
 
 body {
   font-family: sans-serif;
-  background-color: #0d142e;
+  background-color: var(--color-1);
   color: #fff;
 }
