@@ -1,116 +1,114 @@
 .notes-container {
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .notes-container h1 {
-    font-size: 2rem;
-    margin: 10px 0 30px 0;
+  font-size: 3rem;
+  margin: 10px 0 30px 0;
+  text-align: center;
 }
 
 .notes {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .note {
-    width: 400px;
-    max-width: 47%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    border: 1px solid #a5a5a5;
-    background-color: var(--color-5);
+  width: 400px;
+  max-width: 47%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #a5a5a5;
+  background-color: var(--color-5);
 }
 
 .note h2 {
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-    padding: 0 10px;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  padding: 0 10px;
 }
 
 .note p {
-    color: var(--color-3);
-    padding: 0 10px 10px 10px;
-    height: 60px
+  color: var(--color-3);
+  padding: 0 10px 10px 10px;
+  height: 60px;
 }
 
 .note-icon {
-    min-width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .note-icon svg {
-    font-size: 120px;
-    margin: 10px 0;
+  font-size: 120px;
+  margin: 10px 0;
 }
 
 .note-text .note-btn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    border-top: 1px solid #a5a5a5;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: .5s;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  border-top: 1px solid #a5a5a5;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.5s;
 }
 
 .note-text .note-btn a {
-    text-decoration: none;
-    color: var(--color-3);
-    text-align: center;
-    padding: 10px;
-    transition: .5s;
+  text-decoration: none;
+  color: var(--color-3);
+  text-align: center;
+  padding: 10px;
+  transition: 0.5s;
 }
 
 .note-text .note-btn a:hover {
-    transform: scale(1.1);
-    color: var(--color-2);
+  transform: scale(1.1);
+  color: var(--color-2);
 }
 
-
 @media (max-width: 890px) {
-
-
-    .note-icon .icon {
-        font-size: 90px;
-    }
+  .note-icon .icon {
+    font-size: 90px;
+  }
 }
 
 @media (max-width: 600px) {
+  .notes-container h1 {
+    font-size: 2rem;
+  }
 
-    .note-icon .icon {
-        font-size: 70px;
-    }
+  .note-icon .icon {
+    font-size: 70px;
+  }
 
-    .note h2 {
-        font-size: 1.2rem;
-    }
+  .note h2 {
+    font-size: 1.2rem;
+  }
 
-    .note p {
-        font-size: .8rem;
-    }
-
+  .note p {
+    font-size: 0.8rem;
+  }
 }
 
-
 @media (max-width: 490px) {
-
-    .note p {
-        height: 75px
-    }
+  .note p {
+    height: 75px;
+  }
 }

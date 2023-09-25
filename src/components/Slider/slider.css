@@ -1,94 +1,89 @@
 .container-slider {
-    width: 100%;
-    height: 400px;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .container-slider h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    margin-top: 50px;
+  font-size: 3rem;
 }
 
 .slider {
-    background-color: var(--color-5);
-    min-height: 200px;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--color-5);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider-icon {
-    font-size: 3rem;
-    padding: 10px 0 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-size: 3rem;
+  padding: 10px 0 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider-icon h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .slider-icon svg {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .slider-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .slider-text p {
-    width: 600px;
-    max-width: 95%;
-    margin: 5px 0 0 0;
+  width: 600px;
+  max-width: 95%;
+  margin: 5px 0 0 0;
 }
 
 .slide-btn {
-    text-decoration: none;
-    padding: 10px 30px;
-    color: var(--color-3);
-    border: 1px solid #fff;
-    border-radius: 50px;
-    transition: .5s;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  margin: 0 30px 40px 30px;
+  color: var(--color-3);
+  border: 1px solid #fff;
+  border-radius: 50px;
+  transition: 0.5s;
 }
 
 .slide-btn:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-
-
 @media (max-width: 540px) {
+  /* .container-slider {
+    height: 370px;
+  } */
 
-    .container-slider {
-        height: 370px;
-    }
+  .container-slider h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
 
+  .slider-text {
+    margin-bottom: 10px;
+  }
 
+  /* .slide-btn {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  } */
 
-    .slider-text {
-        margin-bottom: 10px;
-    }
+  .slider-icon svg {
+    display: none;
+  }
 
-    .slide-btn {
-        padding: 5px 10px;
-        font-size: .7rem;
-
-    }
-
-    .slider-icon svg {
-        display: none;
-    }
-
-    .slider-text p {
-        font-size: .8rem;
-    }
-
+  .slider-text p {
+    font-size: 0.8rem;
+  }
 }

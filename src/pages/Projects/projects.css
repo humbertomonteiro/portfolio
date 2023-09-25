@@ -1,190 +1,161 @@
 .projects-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
 }
 
 .projects-container h1 {
-    font-size: 2rem;
-    margin: 10px 0 30px 0;
-    text-align: center;
+  font-size: 3rem;
+  margin: 10px 0 30px 0;
+  text-align: center;
 }
 
 .projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1000px;
 }
 
 .iten-project {
+  width: 47%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+  border: 1px solid #a5a5a5;
+  border-radius: 3px;
+  background-color: var(--color-5);
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.iten-project img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  object-position: top;
+  transition: 0.5s;
+}
+
+.iten-project img:hover {
+  transform: scale(1.1);
+}
+
+.iten-project-info {
+  width: 100%;
+}
+
+.iten-project-info h2 {
+  margin: 10px 0 5px 0;
+  padding-top: 5px;
+  font-size: 1.7rem;
+}
+
+.iten-project-info p {
+  color: #a5a5a5;
+  font-size: 0.8rem;
+}
+
+.iten-project-btn {
+  margin-top: 10px;
+  border-top: 1px solid #a5a5a5;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.iten-project-btn a {
+  text-decoration: none;
+  color: var(--color-3);
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.iten-project-btn a:hover {
+  transform: scale(1.1);
+  color: var(--color-2);
+}
+
+@media (max-width: 900px) {
+  .iten-project {
     width: 47%;
-    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    margin-bottom: 30px;
-    border: 1px solid #a5a5a5;
-    border-radius: 3px;
-    background-color: var(--color-5);
-    overflow: hidden;
-    transition: .5s;
+  }
+
+  .iten-project h2 {
+    font-size: 1.3rem;
+  }
 }
-
-.iten-project img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    object-position: top;
-    transition: .5s;
-}
-
-.iten-project img:hover {
-    transform: scale(1.1);
-}
-
-.iten-project-info {
-    width: 100%;
-}
-
-.iten-project-info h2 {
-    margin: 10px 0 5px 0;
-    padding-top: 5px;
-    font-size: 1.7rem;
-}
-
-.iten-project-info p {
-    color: #a5a5a5;
-    font-size: .8rem;
-}
-
-
-.iten-project-btn {
-    margin-top: 10px;
-    border-top: 1px solid #a5a5a5;
-    height: 40px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.iten-project-btn a {
-    text-decoration: none;
-    color: var(--color-3);
-    padding: 5px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: .5s;
-}
-
-.iten-project-btn a:hover {
-    transform: scale(1.1);
-    color: var(--color-2);
-}
-
-
-
-
-
-
-
-@media (max-width: 900px) {
-
-
-    .iten-project {
-        width: 47%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .iten-project h2 {
-        font-size: 1.3rem;
-    }
-    
-
-
-}
-
-
-
-
-
 
 @media (max-width: 720px) {
+  .project .project-link {
+    width: 90%;
+  }
 
-    .project .project-link {
-        width: 90%;
-    }
+  .project-content img {
+    width: 90%;
+    margin-bottom: 20px;
+  }
 
-    .project-content img {
-        width: 90%;
-        margin-bottom: 20px;
-    }
+  .project-content .project-text {
+    width: 90%;
+  }
 
-    .project-content .project-text {
-        width: 90%;
-    }
+  .close-description {
+    right: 10px;
+  }
 
-    .close-description {
-        right: 10px;
-    }
-
-    
-    .project-content img {
-        height: 250px;
-    }
-
+  .project-content img {
+    height: 250px;
+  }
 }
-
-
-
-
 
 @media (max-width: 550px) {
+  .projects-container h1 {
+    font-size: 2rem;
+  }
 
-    .iten-project .iten-project-btn a {
-        padding: 2px;
-        font-size: .7rem;
-    }
-
+  .iten-project .iten-project-btn a {
+    padding: 2px;
+    font-size: 0.7rem;
+  }
 }
 
-
-
-
-
 @media (max-width: 450px) {
+  .projects .iten-project {
+    width: 47%;
+    min-height: 150px;
+  }
 
-    .projects .iten-project {
-        width: 47%;
-        min-height: 150px;  
-    }
+  .iten-project img {
+    height: 100px;
+  }
 
-    .iten-project img {
-        height: 100px;
-    }
+  .iten-project h2 {
+    font-size: 1rem;
+  }
 
-    .iten-project h2 {
-        font-size: 1rem;
-    }
-    
+  .iten-project p {
+    font-size: 0.8rem;
+  }
 
-    .iten-project p {
-        font-size: .8rem;
-    }
+  .iten-project-btn {
+    height: 30px;
+  }
 
-    .iten-project-btn {
-        height: 30px;
-    }
-
-    
-    .project-content img {
-        height: 200px;
-    }
+  .project-content img {
+    height: 200px;
+  }
 }
