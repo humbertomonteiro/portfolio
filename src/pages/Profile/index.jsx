@@ -4,7 +4,14 @@ import {
   AiOutlineInstagram,
   AiFillGithub,
   AiFillLinkedin,
+  AiFillHtml5,
 } from "react-icons/ai";
+
+import { IoLogoCss3 } from "react-icons/io";
+import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import { GrMysql } from "react-icons/gr";
+import { SiPostgresql, SiNextdotjs } from "react-icons/si";
 
 import CarrosselProjects from "../../components/carrossels/CarrosselProjects";
 import CarrosselNotes from "../../components/carrossels/CarrosselNotes";
@@ -20,12 +27,19 @@ export default function Profile() {
       className="profile-container"
     >
       <div className="article article-img">
-        <div>
-          <img
-            className="photo"
-            src={require("../../assets/imgs/perfil.jpg")}
-            alt=""
-          />
+        <div className="photo">
+          <img src={require("../../assets/imgs/perfil.jpg")} alt="" />
+          <div>
+            <AiFillHtml5 />
+            <IoLogoCss3 />
+            <IoLogoJavascript />
+            <FaReact />
+            <SiNextdotjs />
+            <FaNodeJs />
+            <IoLogoFirebase />
+            <GrMysql />
+            <SiPostgresql />
+          </div>
         </div>
         <div className="">
           <div className="profile">

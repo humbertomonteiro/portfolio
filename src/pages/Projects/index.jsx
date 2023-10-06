@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { projects } from "../../dates/ArrayProjects";
 import { Link } from "react-router-dom";
 
-import CarrosselTow from "../../components/carrossels/Carrossel-2";
+import { AiOutlineLink } from "react-icons/ai";
+import { IoIosArrowForward } from "react-icons/io";
 
 export default function Projects() {
   return (
@@ -16,8 +17,6 @@ export default function Projects() {
     >
       <h1>Projetos Pessoais</h1>
 
-      {/* <CarrosselTow /> */}
-
       <div className="projects">
         {projects.map((e) => (
           <div key={e.id} className="iten-project">
@@ -27,9 +26,11 @@ export default function Projects() {
               <h2>{e.title}</h2>
               <div className="iten-project-btn">
                 <a href={e.url} target="_blanck">
-                  Ver projeto
+                  Ver projeto <AiOutlineLink />
                 </a>
-                <Link to={`/description/${e.id}`}>Descrição</Link>
+                <Link to={`/description/${e.id}`}>
+                  Descrição <IoIosArrowForward />
+                </Link>
               </div>
             </div>
           </div>

@@ -20,7 +20,8 @@
 }
 
 .iten-project {
-  width: 47%;
+  width: 30%;
+  min-width: 150px;
   min-height: 250px;
   display: flex;
   flex-direction: column;
@@ -64,24 +65,27 @@
 .iten-project-btn {
   margin-top: 10px;
   border-top: 1px solid var(--color-7);
-  height: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .iten-project-btn a {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   text-decoration: none;
   color: var(--color-3);
-  padding: 5px;
+  padding: 10px;
   border-radius: 4px;
   cursor: pointer;
   transition: 0.5s;
 }
 
 .iten-project-btn a:hover {
-  transform: scale(1.1);
-  color: var(--color-2);
+  background-color: var(--color-2);
 }
 
 @media (max-width: 900px) {
@@ -127,7 +131,7 @@
   }
 
   .iten-project .iten-project-btn a {
-    padding: 2px;
+    /* padding: 2px; */
     font-size: 0.7rem;
   }
 }

@@ -74,12 +74,12 @@
   font-size: 0.7rem;
   width: 60px;
   padding: 5px;
-  border-radius: 6px;
+  border-radius: 15px;
   transition: 0.5s all;
 }
 
 .home-btns a:hover {
-  color: var(--color-2);
+  background-color: var(--color-2);
 }
 
 .home-btns a svg {

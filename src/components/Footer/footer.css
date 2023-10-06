@@ -34,5 +34,5 @@ footer .footer-medias a {
 }
 
 footer .footer-medias a:hover {
-  color: aqua;
+  color: var(--color-2);
 }
