@@ -1,12 +1,12 @@
 :root {
   --color-1: #0d142e;
-  --color-2: #A854C5;
+  --color-2: #41008b;
   --color-3: #f0f0f0;
-  --color-4: #a5a5a5;
+  --color-4: #b8b8b8;
   --color-5: #080d1d;
-  --color-6: #0E0556;
+  --color-6: #0e0556;
+  --color-7: #424242;
 }
-
 
 * {
   margin: 0;
@@ -18,4 +18,12 @@ body {
   font-family: sans-serif;
   background-color: var(--color-1);
   color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
 }

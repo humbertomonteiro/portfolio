@@ -16,7 +16,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 .iten-project {
@@ -28,8 +28,7 @@
   align-items: center;
   text-align: center;
   margin-bottom: 30px;
-  border: 1px solid #a5a5a5;
-  border-radius: 3px;
+  border-radius: 20px;
   background-color: var(--color-5);
   overflow: hidden;
   transition: 0.5s;
@@ -64,7 +63,7 @@
 
 .iten-project-btn {
   margin-top: 10px;
-  border-top: 1px solid #a5a5a5;
+  border-top: 1px solid var(--color-7);
   height: 40px;
   display: flex;
   justify-content: space-around;

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { projects } from "../../dates/ArrayProjects";
 import { Link } from "react-router-dom";
 
-import CarrosselTow from "../../components/Carrossel-2";
+import CarrosselTow from "../../components/carrossels/Carrossel-2";
 
 export default function Projects() {
   return (

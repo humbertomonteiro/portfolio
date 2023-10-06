@@ -1,255 +1,240 @@
 .pages-notes-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pages-notes {
-    width: 950px;
-    max-width: 98%;
-    padding: 130px 10px 50px 10px;
-    background-color: var(--color-5);
+  width: 950px;
+  max-width: 98%;
+  padding: 130px 10px 50px 10px;
+  background-color: var(--color-5);
 }
 
 .pages-notes-container h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
-
 .pages-notes .pages-notes-text h2 {
-    padding: 30px 0 10px 0;
-    font-size: 2.2rem;
+  padding: 30px 0 10px 0;
+  font-size: 2.2rem;
 }
 
 .pages-notes .pages-notes-text h3 {
-    padding: 10px 0;
-    font-size: 1.7rem;
+  padding: 10px 0;
+  font-size: 1.7rem;
 }
 
 .pages-notes .pages-notes-text h4 {
-    padding-bottom: 10px;
-    font-size: 1.5rem;
+  padding-bottom: 10px;
+  font-size: 1.5rem;
 }
 
 .pages-notes .pages-notes-text p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: var(--color-3);
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: var(--color-3);
+  line-height: 150%;
 }
 
 .pages-notes .pages-notes-text strong {
-    padding: 2px 4px;
-    font-size: 1.1rem;
+  padding: 2px 4px;
+  font-size: 1.1rem;
 }
 
 .pages-notes .pages-notes-text a {
-    text-decoration: none;
-    color: aqua;
-    padding: 4px;
-    margin: 2px;
-    background-color: #080d1dcc;
-    border-radius: 4px;
-    transition: .5s;
+  text-decoration: none;
+  color: aqua;
+  padding: 4px;
+  margin: 2px;
+  background-color: #080d1dcc;
+  border-radius: 4px;
+  transition: 0.5s;
 }
 
 .pages-notes .pages-notes-text a:hover {
-    color: aqua;
+  color: aqua;
 }
 
 .pages-notes .pages-notes-text pre {
-    overflow-x: scroll;
-    padding: 10px;
-    background-color: #080d1dcc;
-    margin: 15px 0;
+  overflow-x: scroll;
+  padding: 10px;
+  background-color: #080d1dcc;
+  margin: 15px 0;
 }
 
 .pages-notes .pages-notes-text pre::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .pages-notes .pages-notes-text ul li {
-    margin: 10px 0 10px 15px;
+  margin: 10px 0 10px 15px;
 }
 
 .pages-notes .pages-notes-text article {
-    background-color: #a5a5a5;
-    padding: 10px;
-    border-radius: 4px;
-    margin: 30px 0;
+  background-color: #a5a5a5;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 30px 0;
 }
 
 .pages-notes .pages-notes-text article h3 {
-    background-color: #6d6d6d;
-    color: #000000;
-    text-align: center;
-    margin: -10px -10px 10px -10px;
-    border-radius: 4px 4px 0 0;
+  background-color: #6d6d6d;
+  color: #000000;
+  text-align: center;
+  margin: -10px -10px 10px -10px;
+  border-radius: 4px 4px 0 0;
 }
 
 .pages-notes .pages-notes-text article p {
-    color: #000;
+  color: #000;
 }
 
-
-
 .div-video {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 30px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0 20px 0;
 }
 
 .div-video iframe {
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
-
-
 .div-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
 }
 
 .div-img img {
-    width: 600px;
-    max-width: 95%;
-    border-radius: 4px;
-    width: fit-content;
+  width: 600px;
+  max-width: 95%;
+  border-radius: 4px;
+  width: fit-content;
 }
 
-
-
-
 .div-bg {
-    display: flex;
-    position: fixed;
-    top: 25%;
-    right: 0;
-    z-index: 1;
-    opacity: 0;
-    animation: sliderLeft .8s ease forwards;
-    animation-delay: .6s;
+  display: flex;
+  position: fixed;
+  top: 25%;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  animation: sliderLeft 0.8s ease forwards;
+  animation-delay: 0.6s;
 }
 
 .div-bg svg {
-    font-size: 300px;
+  font-size: 300px;
 }
 
-
-
-
 .exemple {
-    background-color: #ffffffe5;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px 0;
-    margin: 30px 0;
-    border-radius: 4px;
+  background-color: #ffffffe5;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 0;
+  margin: 30px 0;
+  border-radius: 4px;
 }
 
 .exemple button {
-    background-color: #080d1dcc;
-    color: #fff;
-    border: 0;
-    padding: 4px 15px;
-    border-radius: 4px;
-    margin: 10px;
+  background-color: #080d1dcc;
+  color: #fff;
+  border: 0;
+  padding: 4px 15px;
+  border-radius: 4px;
+  margin: 10px;
 }
 
 .exemple input {
-    border: 0;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin: 10px;
+  border: 0;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 10px;
 }
 
 .exemple article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .exemple strong {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .exemple img {
-    width: 700px;
-    max-width: 95%;
-    margin-bottom: 20px;
-    border-radius: 4px;
+  width: 700px;
+  max-width: 95%;
+  margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 .exemple p {
-    max-width: 600px;
-    width: 90%;
+  max-width: 600px;
+  width: 90%;
 }
 
 .exemple ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pages-notes-container .exemple ul li {
-    list-style: none;
-    min-width: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #ffffffd7;
-    padding: 5px;
-    border-radius: 4px;
-    margin: 5px;
+  list-style: none;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffffd7;
+  padding: 5px;
+  border-radius: 4px;
+  margin: 5px;
 }
 
 .pages-notes-container .exemple ul li div {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
 }
 
 .routes-exemple {
-    padding-top: 80px;
+  padding-top: 80px;
 }
-
-
-
-
 
 .hidden {
-    display: none;
+  display: none;
 }
 
-
 @keyframes sliderTop {
-    0% {
-        opacity: 0;
-        transform: translateY(150px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes sliderLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
 
-    100% {
-        opacity: .1;
-        transform: translateX(0);
-    }
+  100% {
+    opacity: 0.1;
+    transform: translateX(0);
+  }
 }

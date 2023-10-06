@@ -14,7 +14,7 @@
 
 .notes {
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -22,15 +22,14 @@
 }
 
 .note {
-  width: 400px;
+  /* width: 400px; */
   max-width: 47%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
-  border-radius: 10px;
-  border: 1px solid #a5a5a5;
+  border-radius: 20px;
   background-color: var(--color-5);
 }
 
@@ -63,7 +62,7 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
-  border-top: 1px solid #a5a5a5;
+  border-top: 1px solid var(--color-7);
   font-size: 1rem;
   cursor: pointer;
   margin-top: 20px;
