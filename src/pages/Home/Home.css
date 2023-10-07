@@ -6,7 +6,7 @@
 
 .introduce {
   width: 1200px;
-  max-width: 95%;
+  max-width: 98%;
   padding: 10px;
   border-radius: 10px 10px 20px 20px;
   display: flex;
@@ -37,11 +37,11 @@
 }
 
 .introduce-text h1 {
-  background-image: linear-gradient(to right, var(--color-2), var(--color-3));
-  background-clip: text;
+  /* background-image: linear-gradient(to right, var(--color-3), var(--color-2));
+  background-clip: text; */
   font-size: 4.5rem;
   line-height: 70px;
-  color: transparent;
+  /* color: transparent; */
   font-weight: 800;
   margin: 10px 0 16px 0;
 }
@@ -98,9 +98,6 @@
 
 .introduce-img img {
   object-fit: cover;
-  /* opacity: 0;
-  animation: zoomIn 1s ease forwards, floatImg 4s ease-in-out infinite;
-  animation-delay: 0.1s, 1s; */
 }
 
 .introduce-img .iconsSkills {
@@ -112,7 +109,7 @@
 
 .introduce-img .iconsSkills svg {
   font-size: 2rem;
-  color: var(--color-2);
+  color: var(--color-3);
 }
 
 @media (max-width: 600px) {

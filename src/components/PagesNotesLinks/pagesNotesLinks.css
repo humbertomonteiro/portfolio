@@ -1,8 +1,7 @@
 .pages-notes-links {
+  width: 1200px;
+  max-width: 100%;
   background-color: var(--color-1);
-  border-top: 1px solid #ffffffc4;
-  width: 100%;
-  height: 40px;
   position: fixed;
   top: 60px;
   display: flex;
@@ -13,11 +12,10 @@
 }
 
 .pages-notes-links div nav {
-  width: 1200px;
-  max-width: 100%;
   padding: 10px 20px;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -28,6 +26,13 @@
   gap: 5px;
   text-decoration: none;
   color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.show-links-pages nav a:hover {
+  background-color: var(--color-2);
 }
 
 .btn-hidden {
@@ -47,34 +52,25 @@
   .btn-show {
     font-size: 0.8rem;
     width: 100%;
-    background-color: #080d1de7;
-    padding: 5px 0;
-    border-top: 1px solid #b8b8b8c2;
+    background-color: var(--color-1);
+    padding: 5px;
+    border-radius: 5px;
     display: flex;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 60px;
+    opacity: 0;
+    animation: sliderBottom 0.8s ease forwards;
     transition: 0.5s;
   }
 
   .btn-hidden:hover,
   .btn-show:hover {
-    color: var(--color-2);
-  }
-
-  .btn-hidden {
-    position: fixed;
-    opacity: 0;
-    animation: sliderBottom 0.8s ease forwards;
-  }
-
-  .btn-show {
-    position: fixed;
-    top: 60px;
-    opacity: 0;
-    animation: sliderBottom 1s ease forwards;
+    background-color: var(--color-2);
   }
 
   .hidden-links-pages {
@@ -93,21 +89,12 @@
     background-color: var(--color-1);
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     justify-content: space-around;
     align-items: center;
     position: fixed;
     top: 95px;
     opacity: 0;
     animation: sliderBottom 0.8s ease forwards;
-  }
-
-  .show-links-pages nav a {
-    transition: 0.5s;
-  }
-
-  .show-links-pages nav a:hover {
-    color: var(--color-2);
   }
 }
 

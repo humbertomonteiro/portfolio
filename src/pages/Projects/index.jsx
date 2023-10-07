@@ -20,7 +20,9 @@ export default function Projects() {
       <div className="projects">
         {projects.map((e) => (
           <div key={e.id} className="iten-project">
-            <img src={e.img} alt="img" />
+            <div className="div-img-project">
+              <img src={e.img} alt="img" />
+            </div>
 
             <div className="iten-project-info">
               <h2>{e.title}</h2>

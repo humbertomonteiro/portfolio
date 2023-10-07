@@ -35,6 +35,12 @@
   transition: 0.5s;
 }
 
+.iten-project .div-img-project {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
 .iten-project img {
   width: 100%;
   height: 170px;

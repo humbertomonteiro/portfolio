@@ -20,13 +20,15 @@
 
 .header nav a {
   text-decoration: none;
-  padding: 5px 15px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
   color: #fff;
   transition: all 0.5s;
 }
 
 .header nav a:hover {
-  color: var(--color-2);
+  background-color: var(--color-2);
 }
 
 .bars {
@@ -65,8 +67,8 @@
     min-height: 250px;
     min-width: 120px;
     padding: 20px 0 10px 10px;
-    background-color: #080d1d;
-    border-radius: 4px;
+    background-color: var(--color-1);
+    border-radius: 10px;
     opacity: 0;
     animation: slideXLeft 0.8s ease forwards;
     z-index: 5;

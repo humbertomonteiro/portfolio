@@ -10,7 +10,7 @@
 
 .container-slider h2 {
   font-size: 2rem;
-  margin-bottom: 15px;
+  margin: 20px 0;
 }
 
 .slider {
@@ -32,7 +32,7 @@
 
 .slider-icon {
   font-size: 3rem;
-  padding: 10px 0 10px 0;
+  /* padding: 10px 0 10px 0; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,10 +88,6 @@
 
   .slider-text {
     margin-bottom: 10px;
-  }
-
-  .slider-icon svg {
-    display: none;
   }
 
   .slider-text p {
