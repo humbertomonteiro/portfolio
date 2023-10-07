@@ -17,6 +17,7 @@
   justify-content: space-around;
   align-items: center;
   max-width: 1200px;
+  gap: 30px;
 }
 
 .iten-project {
@@ -28,7 +29,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 30px;
   border-radius: 20px;
   background-color: var(--color-5);
   overflow: hidden;
@@ -137,15 +137,20 @@
   }
 
   .iten-project .iten-project-btn a {
-    /* padding: 2px; */
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 
 @media (max-width: 450px) {
+  .projects {
+    gap: 10px;
+  }
+
   .projects .iten-project {
-    width: 47%;
+    width: 45%;
     min-height: 150px;
+    border-radius: 15px;
+    margin-bottom: 20px;
   }
 
   .iten-project img {

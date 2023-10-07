@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 70px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .introduce {
@@ -79,7 +79,7 @@
 }
 
 .home-btns a:hover {
-  background-color: var(--color-2);
+  background-color: var(--color-1);
 }
 
 .home-btns a svg {
@@ -114,6 +114,7 @@
 
 @media (max-width: 600px) {
   .introduce {
+    max-width: 100%;
     margin-top: 70px;
     padding: 5px;
     background-color: transparent;

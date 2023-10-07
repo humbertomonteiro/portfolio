@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 
 // import Background from "./components/Background"
 
+import BtnUp from "./components/BtnUp";
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -13,6 +15,7 @@ export default function App() {
       <RoutesApp />
       <Footer />
       {/* <Background /> */}
+      <BtnUp />
     </BrowserRouter>
   );
 }

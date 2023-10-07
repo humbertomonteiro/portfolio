@@ -1,7 +1,7 @@
 .div-search {
   position: fixed;
   top: 20%;
-  right: 10%;
+  right: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +16,7 @@
   border-radius: 4px;
   background-color: #fffffff5;
   width: 300px;
+  outline: none;
   opacity: 0;
   animation: slideLeft 0.8s ease forwards;
 }

@@ -1,0 +1,24 @@
+.btn-up {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 5;
+}
+
+.btn-up svg {
+  font-size: 3.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.btn-up svg:hover {
+  background-color: var(--color-2);
+}
+
+@media (max-width: 600px) {
+  .btn-up {
+    right: 0;
+  }
+}

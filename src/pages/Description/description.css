@@ -1,10 +1,17 @@
 .project {
-  padding: 80px 0;
+  padding-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0d142e;
+}
+
+.project div {
+  width: 1200px;
+  max-width: 98%;
+  border-radius: 20px;
+  padding: 20px 10px;
+  background-color: var(--color-5);
 }
 
 .project h2 {
@@ -18,17 +25,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 900px;
 }
 
 .project-content img {
-  width: 95%;
-  margin-bottom: 20px;
+  width: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .project-content .project-text {
-  width: 95%;
+  width: 100%;
 }
 
 .project-content .project-text h3 {
@@ -53,9 +59,17 @@
 }
 
 .project .project-btns a {
+  display: block;
   padding: 10px;
+  border-radius: 10px;
+  width: fit-content;
+  color: var(--color-3);
+  background-color: var(--color-1);
 }
 
+.project .project-btns a:hover {
+  background-color: var(--color-2);
+}
 /* .project .project-link {
     text-decoration: none;
     width: 90%;
