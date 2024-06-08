@@ -15,34 +15,34 @@
   font-size: 2.5rem;
 }
 
-.pages-notes .pages-notes-text h2 {
+.pages-notes-text h2 {
   padding: 30px 0 10px 0;
   font-size: 2.2rem;
 }
 
-.pages-notes .pages-notes-text h3 {
+.pages-notes-text h3 {
   padding: 10px 0;
   font-size: 1.7rem;
 }
 
-.pages-notes .pages-notes-text h4 {
+.pages-notes-text h4 {
   padding-bottom: 10px;
   font-size: 1.5rem;
 }
 
-.pages-notes .pages-notes-text p {
+.pages-notes-text p {
   font-size: 1rem;
   margin-bottom: 10px;
-  color: var(--color-3);
+  color: var(--color-8);
   line-height: 150%;
 }
 
-.pages-notes .pages-notes-text strong {
+.pages-notes-text strong {
   padding: 2px 4px;
   font-size: 1.1rem;
 }
 
-.pages-notes .pages-notes-text a {
+.pages-notes-text a {
   text-decoration: none;
   color: aqua;
   padding: 4px;
@@ -52,42 +52,43 @@
   transition: 0.5s;
 }
 
-.pages-notes .pages-notes-text a:hover {
+.pages-notes-text a:hover {
   color: aqua;
 }
 
-.pages-notes .pages-notes-text pre {
+.pages-notes-text pre {
   overflow-x: scroll;
   padding: 10px;
   background-color: #080d1dcc;
   margin: 15px 0;
 }
 
-.pages-notes .pages-notes-text pre::-webkit-scrollbar {
+.pages-notes-text pre::-webkit-scrollbar {
   display: none;
 }
 
-.pages-notes .pages-notes-text ul li {
+.pages-notes-text ul li {
   margin: 10px 0 10px 15px;
 }
 
-.pages-notes .pages-notes-text article {
-  background-color: #a5a5a5;
+.pages-notes-text article {
+  background-color: var(--color-7);
   padding: 10px;
   border-radius: 4px;
   margin: 30px 0;
 }
 
-.pages-notes .pages-notes-text article h3 {
-  background-color: #6d6d6d;
-  color: #000000;
+.pages-notes-text article h3 {
+  background-color: var(--color-2);
+  color: var(--color-8);
   text-align: center;
   margin: -10px -10px 10px -10px;
   border-radius: 4px 4px 0 0;
 }
 
-.pages-notes .pages-notes-text article p {
-  color: #000;
+.pages-notes-text article p {
+  color: var(--color-3);
+  line-height: 150%;
 }
 
 .div-video {
@@ -180,6 +181,7 @@
 .exemple p {
   max-width: 600px;
   width: 90%;
+  line-height: 150%;
 }
 
 .exemple ul {

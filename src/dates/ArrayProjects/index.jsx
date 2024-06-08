@@ -13,28 +13,6 @@ import BookBaby from "../../assets/imgs/projects/book-baby.png";
 
 const projects = [
   {
-    id: 2,
-    img: Orcamento,
-    title: "My Finans",
-    tecnologis: "HTML, CSS, JavaScript",
-    url: "https://humbertomonteiro.github.io/my_finans/",
-    description: `Um programa que vai organizar as receitas e 
-        despesas. Mostrando o valor de todas as despesas cadastradas,
-        o valor das receitas cadastradas, o balanço mensal, o valor
-        atual de acordo com as transações que foram resolvidas.`,
-  },
-  {
-    id: 3,
-    img: TiaNanda,
-    title: "Formando Futuros",
-    tecnologis: "HTML, CSS, JavaScript",
-    url: "https://humbertomonteiro.github.io/tia_nanda/",
-    description: `Uma landing page feita para uma professora 
-        onde tem todas as redes sociais dela, mostra a 
-        localização do reforço escolar e também para 
-        expor os materiais que ela vende.`,
-  },
-  {
     id: 4,
     img: TopHair,
     title: "Top Hair",
@@ -45,13 +23,14 @@ const projects = [
         `,
   },
   {
-    id: 5,
-    img: Sabiaguaba,
-    title: "Sabiaguaba Park",
-    tecnologis: "HTML, CSS, JavaScript",
-    url: "https://humbertomonteiro.github.io/sabiaguaba_park/index.html",
-    description: `Uma landing page feita para uma barraca
-        de praia que mostra a localizaçãoe e o cardápio.`,
+    id: 11,
+    img: FinansFlow,
+    title: "Finans Flow",
+    tecnologis: "React, Firebase",
+    url: "https://finansflow.vercel.app/",
+    description: `Uma aplicação para registrar transações de despesas, receitas
+        e ate clientes. Mostrando de forma simples o seu balanço e informando se tem 
+        algum atraso.`,
   },
   {
     id: 6,
@@ -108,22 +87,43 @@ const projects = [
   //     possa se cadastrar e gerênciar seu reforço escolar.`
   // },
   {
-    id: 11,
-    img: FinansFlow,
-    title: "Finans Flow",
-    tecnologis: "React, Firebase",
-    url: "https://finansflow.vercel.app/",
-    description: `Uma aplicação para registrar transações de despesas, receitas
-        e ate clientes. Mostrando de forma simples o seu balanço e informando se tem 
-        algum atraso.`,
-  },
-  {
     id: 12,
     img: BookBaby,
     title: "Book Baby",
     tecnologis: "React, Firebase",
     url: "https://my-baby-izj2uz303-humbertomonteiro.vercel.app/",
     description: `Uma aplicação para criar eventos para crianças.`,
+  },
+  {
+    id: 3,
+    img: TiaNanda,
+    title: "Formando Futuros",
+    tecnologis: "HTML, CSS, JavaScript",
+    url: "https://humbertomonteiro.github.io/tia_nanda/",
+    description: `Uma landing page feita para uma professora 
+        onde tem todas as redes sociais dela, mostra a 
+        localização do reforço escolar e também para 
+        expor os materiais que ela vende.`,
+  },
+  {
+    id: 1,
+    img: Orcamento,
+    title: "My Finans",
+    tecnologis: "HTML, CSS, JavaScript",
+    url: "https://humbertomonteiro.github.io/my_finans/",
+    description: `Um programa que vai organizar as receitas e 
+        despesas. Mostrando o valor de todas as despesas cadastradas,
+        o valor das receitas cadastradas, o balanço mensal, o valor
+        atual de acordo com as transações que foram resolvidas.`,
+  },
+  {
+    id: 5,
+    img: Sabiaguaba,
+    title: "Sabiaguaba Park",
+    tecnologis: "HTML, CSS, JavaScript",
+    url: "https://humbertomonteiro.github.io/sabiaguaba_park/index.html",
+    description: `Uma landing page feita para uma barraca
+        de praia que mostra a localizaçãoe e o cardápio.`,
   },
 ];
 

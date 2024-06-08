@@ -7,6 +7,14 @@
   align-items: center;
 }
 
+.container-article {
+  width: 1200px;
+  max-width: 98%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 .article {
   background-color: var(--color-5);
   width: 98%;
@@ -45,7 +53,7 @@
 }
 
 .article p {
-  color: var(--color-4);
+  color: var(--color-8);
 }
 
 .article ul li {
@@ -107,5 +115,16 @@
   .article-img {
     display: flex;
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 440px) {
+  .container-article {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .container-article .article {
+    width: 100%;
   }
 }

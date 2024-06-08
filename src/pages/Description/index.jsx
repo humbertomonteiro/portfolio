@@ -29,7 +29,7 @@ export default function Description() {
             <img src={e.img} alt="" />
             <div className="project-text">
               <h3>Tecnologias:</h3>
-              <p>HTML, CSS e JavaScript</p>
+              <p>{e.tecnologis}</p>
               <h4>Descrição:</h4>
               <p>{e.description}</p>
             </div>

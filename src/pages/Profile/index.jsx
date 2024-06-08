@@ -86,8 +86,8 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <div className="article">
-        <div className="about">
+      <div className="container-article">
+        <div className="about article">
           <h2>Sobre</h2>
           <p>
             Desenvolvedor Fullstack com experiência em criação de interfaces
@@ -101,6 +101,14 @@ export default function Profile() {
             de trabalhar em equipe, resolver problemas e adaptar-se a novas
             tecnologias rapidamente.
           </p>
+        </div>
+        <div className="article">
+          <ul className="specialties">
+            <h2>Especialidades</h2>
+            <li>Sites</li>
+            <li>Blogs</li>
+            <li>Sistemas</li>
+          </ul>
         </div>
       </div>
 
@@ -150,14 +158,14 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <div className="article">
+      {/* <div className="article">
         <ul className="specialties">
           <h2>Especialidades</h2>
           <li>Sites</li>
           <li>Blogs</li>
           <li>Sistemas</li>
         </ul>
-      </div>
+      </div> */}
       <CarrosselNotes />
     </motion.div>
   );
