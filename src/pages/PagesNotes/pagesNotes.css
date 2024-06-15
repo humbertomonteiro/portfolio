@@ -71,6 +71,15 @@
   margin: 10px 0 10px 15px;
 }
 
+.pages-notes-text ol {
+  margin-left: 20px;
+  color: var(--color-8);
+}
+
+.pages-notes-text .list-ol > li {
+  margin-bottom: 20px;
+}
+
 .pages-notes-text article {
   background-color: var(--color-7);
   padding: 10px;

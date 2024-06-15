@@ -1,5 +1,3 @@
-import "../pagesNotes.css";
-
 export default function Git() {
   return (
     <div className="pages-notes-text">

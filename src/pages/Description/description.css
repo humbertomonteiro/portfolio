@@ -1,12 +1,17 @@
-.project {
+.project-description {
   padding-top: 80px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.project div {
+.project-description h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.project-container {
   width: 1200px;
   max-width: 98%;
   border-radius: 20px;
@@ -14,74 +19,64 @@
   background-color: var(--color-5);
 }
 
-.project h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
 .project-content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 20px;
 }
 
-.project-content img {
+.project-text {
   width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
+  margin: 10px 0;
 }
 
-.project-content .project-text {
-  width: 100%;
-}
-
-.project-content .project-text h3 {
+.project-text h3 {
   font-size: 1.8rem;
   margin-bottom: 5px;
 }
 
-.project-content .project-text h4 {
+.project-text h4 {
   font-size: 1.5rem;
   margin: 10px 0 5px 0;
 }
 
-.project-content .project-text p {
+.project-text p {
   color: #a5a5a5;
+  line-height: 150%;
 }
 
-.project .project-btns {
+.preject-img img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 10px 0 20px;
+}
+
+.project-btns {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.project .project-btns a {
-  display: block;
+.project-btns a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
   padding: 10px;
   border-radius: 10px;
   width: fit-content;
   color: var(--color-3);
   background-color: var(--color-1);
+  transition: 0.5s;
 }
 
-.project .project-btns a:hover {
+.project-btns a:hover {
   background-color: var(--color-2);
 }
-/* .project .project-link {
-    text-decoration: none;
-    width: 90%;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px 30px;
-    margin-top: 20px;
-    transition: 0.5s;
-    }
 
-    .project .project-link:hover {
-    transform: scale(1.1);
-    } */
+@media (max-width: 1000px) {
+  .project-content {
+    flex-direction: column;
+  }
+}

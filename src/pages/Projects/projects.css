@@ -46,10 +46,12 @@
   height: 170px;
   object-fit: cover;
   object-position: top;
+  opacity: 0.4;
   transition: 0.5s;
 }
 
 .iten-project img:hover {
+  opacity: 1;
   transform: scale(1.1);
 }
 

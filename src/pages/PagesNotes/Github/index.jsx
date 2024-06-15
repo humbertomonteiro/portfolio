@@ -36,11 +36,11 @@ export default function React() {
           repositório remoto.
         </p>
         <div className="div-img">
-          <img src={require("../../../assets/imgs/githubpasso1.PNG")} alt="" />
+          <img src={require("../../../assets/imgs/githubpasso1.PNG")} alt="passo1" />
         </div>
         <p>Após clicar no botão new, irá aparecer essa tela:</p>
         <div className="div-img">
-          <img src={require("../../../assets/imgs/githubpasso2.PNG")} alt="" />
+          <img src={require("../../../assets/imgs/githubpasso2.PNG")} alt="passo2" />
         </div>
         <p>
           No campo <strong>nome do repositório</strong> você vai colocar o nome
@@ -50,7 +50,7 @@ export default function React() {
         </p>
         <p>Ainda na mesma página vão aparecer esses campos:</p>
         <div className="div-img">
-          <img src={require("../../../assets/imgs/githubpasso3.PNG")} alt="" />
+          <img src={require("../../../assets/imgs/githubpasso3.PNG")} alt="passo3" />
         </div>
         <p>
           Aqui vamos primeiro informar se o repositório vai ser público ou
@@ -65,13 +65,13 @@ export default function React() {
           seguintes comandos:
         </p>
         <div className="div-img">
-          <img src={require("../../../assets/imgs/githubpasso4.PNG")} alt="" />
+          <img src={require("../../../assets/imgs/githubpasso4.PNG")} alt="passo4" />
         </div>
         <p>
           Ou para enviar um repositório existente a partir da linha de comando.
         </p>
         <div className="div-img">
-          <img src={require("../../../assets/imgs/githubpasso5.PNG")} alt="" />
+          <img src={require("../../../assets/imgs/githubpasso5.PNG")} alt="passo5" />
         </div>
         <p>
           Aqui no nosso caso vamos criar um repositório remoto já existente na
