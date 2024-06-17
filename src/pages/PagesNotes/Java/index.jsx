@@ -216,6 +216,42 @@ export default function Java() {
         </p>
         <p>Ou poderiamos ver o array completo dessa forma:</p>
         <pre>System.out.println(Arrays.toString(numeros));</pre>
+
+        <h2>Array Dinâmico</h2>
+        <p>
+          Vimos que um vetor tem que ser informado quantos espaços vão ter para
+          o mesmo ser inicializado. O ArrayList vai nos permitir criar arrays
+          dinâmicos de uma forma bem simples. Veja:
+        </p>
+        <pre>
+          ArrayList&lt;integer&gt; idades = new ArrayList&lt;interger&gt;();
+        </pre>
+        <p>
+          O array já esta criado. Estamos usando o objeto ArrayList, entre os
+          sinais maior e menor, vamos atribuir o tipo do array, em seguida dar o
+          nome, o próximo passo é atribuir uma instância do mesmo ArrayList com
+          o mesmo parâmetro.
+        </p>
+        <p>Para adicionar um elemento para esse array vmaos usar o .add().</p>
+        <pre>idades.add(22);</pre>
+        <p>Para retornar o valor de indice, vamos usar o método .get().</p>
+        <pre>idades.get(0);</pre>
+        <p>Para remover algum indice, vamos usar o .remove().</p>
+        <pre>idades.remove(0);</pre>
+        <p>Para sabermos o tamanho desse array vamos usar o .size().</p>
+        <pre>idades.size();</pre>
+        <p>
+          São varios métodos disponíveis para usarmos, esse são alguns, mas caso
+          queira saber mais
+          <a
+            href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Clique aqui
+          </a>
+          .
+        </p>
         <h2>Laço for</h2>
         <p>
           A forma que vimos de criar arrays é correta, mas bem complicada.
@@ -335,8 +371,9 @@ export default function Java() {
           />
         </div>
         <p>
-          Estamos colocando a palavra public antes de cada caracteristica, para
-          que possamos alterar fora do escopo da classe.
+          Estamos colocando a palavra public antes de cada atributo, para que
+          possamos alterar fora do escopo da classe. Chamamos esse mecânismo de
+          modificadores de acesso, vamso ver mais afrente nas anotações.
         </p>
         <p>
           Agora para criar um objeto dessa classe vamos voltar para nossa pasta

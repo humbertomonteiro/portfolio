@@ -2,7 +2,7 @@
   --color-1: #000000;
   --color-2: #2c005e;
   --color-3: #f0f0f0;
-  --color-4: #b8b8b8;
+  --color-4: #c0c0c0;
   --color-5: #191b1f;
   --color-6: #0e0556;
   --color-7: #424242;
@@ -21,9 +21,9 @@ body {
   color: #fff;
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 a {
   text-decoration: none;
