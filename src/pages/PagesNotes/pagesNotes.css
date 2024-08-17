@@ -30,6 +30,13 @@
   font-size: 1.5rem;
 }
 
+.pages-notes-text h5 {
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+  color: var(--color-4);
+  text-decoration: underline;
+}
+
 .pages-notes-text p {
   font-size: 1.1rem;
   margin-bottom: 10px;
@@ -40,6 +47,7 @@
 .pages-notes-text strong {
   padding: 2px 4px;
   font-size: 1.1rem;
+  background-color: var(--color-2);
 }
 
 .pages-notes-text a {
@@ -57,15 +65,16 @@
 }
 
 .pages-notes-text pre {
+  width: 100%;
   overflow-x: scroll;
   padding: 10px;
   background-color: #080d1dcc;
   margin: 15px 0;
 }
 
-.pages-notes-text pre::-webkit-scrollbar {
+/* .pages-notes-text pre::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .pages-notes-text ul li {
   margin: 10px 0 10px 15px;

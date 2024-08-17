@@ -25,18 +25,15 @@ export default function Home() {
     <section className="home-container">
       <div className="introduce">
         <motion.div
-          initial={{ x: 100 }}
-          animate={{ x: 0 }}
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
           className="introduce-content"
         >
           <div className="introduce-text">
             <span>Olá, me chamo</span>
             <h1>Humberto Monteiro</h1>
-            <h2>
-              Sou Desenvolvedor Web <br />
-              Fullstack
-            </h2>
+            <h2>Sou Desenvolvedor Fullstack</h2>
             <p>
               Habilidades em HTML5, CSS3, JavaScript, React.js, node.js, bem
               como conhecimentos em design responsivo e boas práticas de
