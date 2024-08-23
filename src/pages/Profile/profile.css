@@ -50,6 +50,7 @@
 .article h2 {
   margin-bottom: 20px;
   font-size: 1.8rem;
+  color: var(--color-4);
 }
 
 .article p {
@@ -100,6 +101,7 @@
 .course h3 {
   margin-bottom: 10px;
   font-weight: 100;
+  color: var(--color-4);
 }
 
 .course p {

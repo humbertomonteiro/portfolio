@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .pages-notes {
@@ -9,6 +10,7 @@
   max-width: 98%;
   padding: 130px 10px 50px 10px;
   background-color: var(--color-5);
+  color: var(--color-3);
 }
 
 .pages-notes-container h1 {
@@ -18,11 +20,13 @@
 .pages-notes-text h2 {
   padding: 30px 0 10px 0;
   font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
 .pages-notes-text h3 {
   padding: 10px 0;
   font-size: 1.7rem;
+  margin-bottom: 1rem;
 }
 
 .pages-notes-text h4 {
@@ -39,9 +43,10 @@
 
 .pages-notes-text p {
   font-size: 1.1rem;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   color: var(--color-4);
-  line-height: 150%;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
 }
 
 .pages-notes-text strong {
@@ -70,6 +75,16 @@
   padding: 10px;
   background-color: #080d1dcc;
   margin: 15px 0;
+  font-size: 1.1rem;
+  color: var(--color-4);
+}
+
+.pages-notes-text pre code {
+  font-family: monospace;
+  line-height: 180%;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  overflow-x: scroll;
 }
 
 /* .pages-notes-text pre::-webkit-scrollbar {

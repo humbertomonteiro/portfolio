@@ -36,18 +36,31 @@ export default function Java() {
           <p>O ponto e virgula (;) é obrigatório usando Java.</p>
         </article>
         <p>Veja abaixo exemplos de como declarar variáveis:</p>
-        <pre>int a = 2;</pre>
-        <pre>float b = 3.3;</pre>
-        <pre>boolean c = false;</pre>
-        <pre>char d = #;</pre>
+        <pre>
+          <code>
+            {`
+int a = 2;
+float b = 3.3;
+boolean c = false;
+char d = #;
+            `}
+          </code>
+        </pre>
+
         <article>
           <h3>Obsevação</h3>
           <p>
             Também podemos declarar uma variável e só depois atribuir um valor.
             Veja:
           </p>
-          <pre>int f;</pre>
-          <pre>f = 4;</pre>
+          <pre>
+            <code>
+              {`
+int f;
+f = 4;
+              `}
+            </code>
+          </pre>
         </article>
         <article>
           <h3>Obsevação</h3>
@@ -69,15 +82,27 @@ export default function Java() {
           em um número inteiro. Mas caso fossemos fazer o seguinte código iria
           dar um resultado errado:
         </p>
-        <pre>int a = 2;</pre>
-        <pre>int b = 3;</pre>
-        <pre>float divisao = b / a;</pre>
+        <pre>
+          <code>
+            {`
+int a = 2;
+int b = 3;
+float divisao = b / a;
+            `}
+          </code>
+        </pre>
         <p>
           O resultado de 3 divido para 2 seria 1,5, mas o java vai retornar um
           valor inteiro, nesse caso 1. Para resolver esse problema vamos usar o
           seguinte código:
         </p>
-        <pre>float divisao = (float) b / a;</pre>
+        <pre>
+          <code>
+            {`
+float divisao = (float) b / a;
+            `}
+          </code>
+        </pre>
         <p>
           Dessa forma o java vai entender que o resultado dessa operaçã usando
           números inteiros vai ser um número decimal.
@@ -94,9 +119,15 @@ export default function Java() {
           No código abaixo vamos à praia apenas se estiver fazendo sol e se for
           final de semana.
         </p>
-        <pre>boolean fimDeSemana = true;</pre>
-        <pre>boolean fazendoSol = true;</pre>
-        <pre>boolean vamosAPraia = fimDeSema && fazendoSol;</pre>
+        <pre>
+          <code>
+            {`
+boolean fimDeSemana = true;
+boolean fazendoSol = true;
+boolean vamosAPraia = fimDeSema && fazendoSol;
+            `}
+          </code>
+        </pre>
         <h3>Operador &&</h3>
         <p>
           O operador && vai retornar true (verdade) se todos os dados
@@ -110,8 +141,14 @@ export default function Java() {
           verdadeiros. Vamos mudar a variável fimDeSemana para false e testar o
           pipe (||):
         </p>
-        <pre>fimDeSemana = false;</pre>
-        <pre>boolean vamosAPraia = fimDeSemana || fazendoSol;</pre>
+        <pre>
+          <code>
+            {`
+fimDeSemana = false;
+boolean vamosAPraia = fimDeSemana || fazendoSol;
+            `}
+          </code>
+        </pre>
         <p>
           Nesse caso o java também irá retornar true, pois um dos resultados é
           verdadeiro. Caso alterassemos os dois parametros para false, o java
@@ -123,9 +160,13 @@ export default function Java() {
           de um dado. Veja como usar:
         </p>
         <pre>
-          String mensagem = fazendoSol ? 'Vamos á praia!' : 'Não vamos a
-          praia.';
+          <code>
+            {`
+String mensagem = fazendoSol ? 'Vamos á praia!' : 'Não vamos a praia.';
+            `}
+          </code>
         </pre>
+
         <p>
           O código acima irá retornar Vamos à praia caso a variável fazendoSol
           seja true, se for false o valor Após o sinal : (dois pontos) será
@@ -182,7 +223,13 @@ export default function Java() {
         <h2>Array</h2>
         <p>Array são uma estrutura de dados que se acemelham a uma lista.</p>
         <p>Para declarar um array podemos usar dessa forma:</p>
-        <pre>int[] numeros = new int[5];</pre>
+        <pre>
+          <code>
+            {`
+int[] numeros = new int[5];
+            `}
+          </code>
+        </pre>
         <p>
           Primeiro vamos informar o tipo do array. Em java so podemos criar
           arrays com o mesmo tipo. Em seguida vem o nome do array. Agora vamos
@@ -200,11 +247,17 @@ export default function Java() {
           indeces, teria essas posições: 0, 1, 2, 3, 4. Vemos ver uma das formas
           de atribuir valores:
         </p>
-        <pre>numeros[0] = 1;</pre>
-        <pre>numeros[1] = 2;</pre>
-        <pre>numeros[2] = 3;</pre>
-        <pre>numeros[3] = 4;</pre>
-        <pre>numeros[4] = 5;</pre>
+        <pre>
+          <code>
+            {`
+numeros[0] = 1;
+numeros[1] = 2;
+numeros[2] = 3;
+numeros[3] = 4;
+numeros[4] = 5;
+            `}
+          </code>
+        </pre>
         <p>
           Se usarmos o System.out.println(numeros) nos receberiamos a seguinte
           resposta: [I@7b23ec81
@@ -215,7 +268,13 @@ export default function Java() {
           exemplo: System.out.println(numeros[0])
         </p>
         <p>Ou poderiamos ver o array completo dessa forma:</p>
-        <pre>System.out.println(Arrays.toString(numeros));</pre>
+        <pre>
+          <code>
+            {`
+System.out.println(Arrays.toString(numeros));
+            `}
+          </code>
+        </pre>
 
         <h2>Array Dinâmico</h2>
         <p>
@@ -224,7 +283,11 @@ export default function Java() {
           dinâmicos de uma forma bem simples. Veja:
         </p>
         <pre>
-          ArrayList&lt;integer&gt; idades = new ArrayList&lt;interger&gt;();
+          <code>
+            {`
+ArrayList&lt;integer&gt; idades = new ArrayList&lt;interger&gt;();
+            `}
+          </code>
         </pre>
         <p>
           O array já esta criado. Estamos usando o objeto ArrayList, entre os
@@ -233,13 +296,37 @@ export default function Java() {
           o mesmo parâmetro.
         </p>
         <p>Para adicionar um elemento para esse array vmaos usar o .add().</p>
-        <pre>idades.add(22);</pre>
+        <pre>
+          <code>
+            {`
+idades.add(22);
+            `}
+          </code>
+        </pre>
         <p>Para retornar o valor de indice, vamos usar o método .get().</p>
-        <pre>idades.get(0);</pre>
+        <pre>
+          <code>
+            {`
+idades.get(0);
+            `}
+          </code>
+        </pre>
         <p>Para remover algum indice, vamos usar o .remove().</p>
-        <pre>idades.remove(0);</pre>
+        <pre>
+          <code>
+            {`
+idades.remove(0);
+            `}
+          </code>
+        </pre>
         <p>Para sabermos o tamanho desse array vamos usar o .size().</p>
-        <pre>idades.size();</pre>
+        <pre>
+          <code>
+            {`
+idades.size();
+            `}
+          </code>
+        </pre>
         <p>
           São varios métodos disponíveis para usarmos, esse são alguns, mas caso
           queira saber mais
@@ -560,8 +647,14 @@ export default function Java() {
           que criamos o cachorro1 e cachorro2, o java vai nos retornar o
           seguinte:
         </p>
-        <pre>Animais.Cachorro@6acbcfc0</pre>
-        <pre>Animais.Cachorro@5f184fc6</pre>
+        <pre>
+          <code>
+            {`
+nimais.Cachorro@6acbcfc0
+Animais.Cachorro@5f184fc6
+            `}
+          </code>
+        </pre>
         <p>Essas são as referências onde estão armazenados cada objeto.</p>
         <p>
           O java permite que possamos atribuir um objeto a outras variáveis de
@@ -605,7 +698,13 @@ export default function Java() {
         <p>
           Para isso vamos nas nossa variáves, e criar uma estatica. Dessa forma:
         </p>
-        <pre>static int contandoCachorro;</pre>
+        <pre>
+          <code>
+            {`
+static int contandoCachorro;
+            `}
+          </code>
+        </pre>
         <p>
           Agora vamos criar os métodos getter e setter. Caso não saiba{" "}
           <a href="#getter&Setter">cliqui aqui</a>
@@ -723,7 +822,13 @@ export default function Java() {
         <p>Já no método tosar, apenas o cachorro vai poder usar.</p>
         <h3>Referências de classes</h3>
         <p>Quando vamos criar um objeto temos o seguinte código:</p>
-        <pre>Cachorro cachorro1 = new Cachorro;</pre>
+        <pre>
+          <code>
+            {`
+Cachorro cachorro1 = new Cachorro;
+            `}
+          </code>
+        </pre>
         <p>
           Primeiro escrevemos a referência da classe, depois a referência do
           objeto e por último vamos atribuir a referência do objeto uma
@@ -734,9 +839,21 @@ export default function Java() {
           referência a classe animal, já que todo cachorro é um animal (Cachorro
           extends classe Animal). Então esse código aqui também vai funcionar:
         </p>
-        <pre>Animal cachorro1 = new Cachorro;</pre>
+        <pre>
+          <code>
+            {`
+Animal cachorro1 = new Cachorro;
+            `}
+          </code>
+        </pre>
         <p>Outra forma que iria funcionar, mas não faz sentido é:</p>
-        <pre>Animal cachorro1 = new Animal</pre>
+        <pre>
+          <code>
+            {`
+Animal cachorro1 = new Animal
+            `}
+          </code>
+        </pre>
         <p>
           No código acima, estariamos criando um objeto de animal, mas isso não
           faz sentido nenhum. Para evitarmos que isso ocorra, podemos
@@ -744,7 +861,13 @@ export default function Java() {
           impedir que tal erro ocorra.
         </p>
         <p>Para transformar uma classe em abstrata vamos fazer assim:</p>
-        <pre>public abstract class Animais() {}</pre>
+        <pre>
+          <code>
+            {`
+public abstract class Animais() {}
+            `}
+          </code>
+        </pre>
       </div>
       <div className="filter">
         <h2>Interface</h2>

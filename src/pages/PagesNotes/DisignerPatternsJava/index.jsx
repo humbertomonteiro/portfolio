@@ -77,13 +77,25 @@ export default function DisignPatterns() {
           Essas duas classes vão ser filhas da classe Produto. Para criar um
           objeto de uma dessas classes usariamos dessa forma:
         </p>
-        <pre>Produto produtoFisico = new Produto();</pre>
+        <pre>
+          <code>
+            {`
+Produto produtoFisico = new Produto();
+            `}
+          </code>
+        </pre>
         <p>
           Para diferênciar o produto físico do digital, temos um atributo na
           classe Produto: possuiDimencoesFisicas. Entao nós vamos ter que dar
           essa caracteristica manualmente. Dessa forma:
         </p>
-        <pre>produtoFisico.setPossuiDimencoesFisicas(true);</pre>
+        <pre>
+          <code>
+            {`
+produtoFisico.setPossuiDimencoesFisicas(true);
+            `}
+          </code>
+        </pre>
         <p>
           Com o method factory é diferente. Vamos criar uma classe especifica
           para criar esses objetos. Por isso tem esse nome factory. É uma

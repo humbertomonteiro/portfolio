@@ -1,12 +1,13 @@
 import { DiReact, DiNodejsSmall } from "react-icons/di";
 import { AiFillGithub } from "react-icons/ai";
-import { SiFirebase, SiMongodb } from "react-icons/si";
+//SiMongodb
+import { SiFirebase } from "react-icons/si";
 import { BsGit } from "react-icons/bs";
 import { GrMysql } from "react-icons/gr";
 import { FaJava } from "react-icons/fa";
 import { IoGameControllerOutline } from "react-icons/io5";
 import { SiPrisma } from "react-icons/si";
-import { TbNotes } from "react-icons/tb";
+// import { TbNotes } from "react-icons/tb";
 
 import Git from "../../pages/PagesNotes/Git";
 import Github from "../../pages/PagesNotes/Github";
@@ -14,11 +15,11 @@ import Node from "../../pages/PagesNotes/Node";
 import React from "../../pages/PagesNotes/React";
 import Firebase from "../../pages/PagesNotes/Firebase";
 import MySQL from "../../pages/PagesNotes/MySQL";
-import MongoDb from "../../pages/PagesNotes/MongoDB";
+// import MongoDb from "../../pages/PagesNotes/MongoDB";
 import Java from "../../pages/PagesNotes/Java";
 import DisignPatterns from "../../pages/PagesNotes/DisignerPatternsJava";
 import Prisma from "../../pages/PagesNotes/Prisma";
-import Notes from "../../pages/PagesNotes/Notes";
+// import Notes from "../../pages/PagesNotes/Notes";
 
 const notes = [
   {

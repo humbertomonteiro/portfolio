@@ -447,7 +447,6 @@ class CreateUserService {
 }
 
 export { CreateUserService };
-
     `}
           </code>
         </pre>
@@ -539,7 +538,6 @@ const user = await prismaClient.user.create({
     email: true,
   },
 });
-
             `}
           </code>
         </pre>
@@ -620,7 +618,6 @@ class AuthUserService {
 }
 
 export { AuthUserService };
-
             `}
           </code>
         </pre>
@@ -771,7 +768,6 @@ class AuthUserService {
 }
 
 export { AuthUserService };
-
             `}
           </code>
         </pre>
@@ -793,7 +789,6 @@ router.post("/users", new CreateUserController().handle);
 router.post("/session", new AuthUserController().handle);
 
 export { router };
-
           `}
           </code>
         </pre>
@@ -812,10 +807,12 @@ export { router };
       <div className="filter">
         <h3>Middleware</h3>
         <p>
-          Nosso token vai precisar de um Middleware para ter sua função de
-          autenticar o usuário. Middlewares são funções intermediárias que
-          executam algum código antes que a rota seja acessada. No nosso caso
-          vamos verificar se o token está correto.
+          Vamos criar um middleware para ter uma função de autenticar o usuário
+          e também disponibilizar o valor do id do user dentro request.
+          Middlewares são funções intermediárias que executam algum código antes
+          que a rota seja acessada. No nosso caso vamos verificar se o token foi
+          passado, se está correto e também vamos adicionar as propriedades da
+          requisição o valor do id do user.
         </p>
         <p>
           No nosso diretório src, vamos criar uma nova pasta: middlewares.
@@ -855,6 +852,469 @@ export function isAuthenticated(
     return res.status(401).end;
   }
 }
+            `}
+          </code>
+        </pre>
+        <p>
+          Primeiro estamos importando as tipagens que vamos usar nos argumentos
+          da função. E também vamos importar o verify do jsonwebtoken.
+        </p>
+        <p>
+          Dentro da nosso função vamos primeiro atribuir a uma constante o valor
+          do token. Esse valor vai estar armazenado na req(request). Mais
+          especificamente dentro de req.headers.authorization.
+        </p>
+        <p>
+          O tipo de authorization que vamos usar no nosso projeto é o Bearer
+          token. E quando pegamos esse valor, ele estará com um prefixo Bearer.
+          Seria mais ou menos assim: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSHVtYmVydG8iLCJlbWFpbi
+        </p>
+        <p>
+          Vai ter o prefixo, um espaço e por último o token. Sabendo disso,
+          vamos primeiro verificar se existe o token, se ele não existir vamos
+          retornar um erro 401(não autorizado).
+        </p>
+        <p>
+          Caso exista, vamos fazer um destructuring para resgatar apenas o valor
+          do token, sem o prefixo.
+        </p>
+        <p>Agora vamos ver o try e catch.</p>
+        <p>
+          No catch, no caso de erro, vamos apenas retornar um erro de não
+          autorizado.
+        </p>
+        <p>
+          No try vamos usar o método do jsonwebtoken verify para desestruturar
+          uma das partes que inserimos no token. O nosso token JWT é separado em
+          3 partes: O header, o payload e o sub.
+        </p>
+        <p>
+          O sub, nos inserimos quando fazemos login. No tercerio parâmetro que
+          passamos para o método sign usamos o subject e a duração do token. O
+          subject é o nosso sub, e nele passamo o id do user.
+        </p>
+        <p>
+          O método do verify, vai precisar de dois argumentos. O próprio token,
+          foi o que conseguimos do req.headers.authorization e o segundo
+          parâmetro é a secretkey.
+        </p>
+        <p>
+          Com o valor do sub(id do user), vamos atribuir ele a uma propriedade
+          que vamos criar dentro do objeto req. O req tem várias propriedades e
+          métodos como já vimos. Como estamos trabalhando com o typescript, ele
+          vai dar erro, pois o user_id não esta na tipagem do req. Para resolver
+          isso, vamos ter que adicionar um novo tipo para ele.
+        </p>
+        <h3>Adicionando nossa tipagem.</h3>
+        <p>
+          Para fazer isso, vamos primeiro, dentro do src, criar uma pasta @types
+          e dentro dela criar outra pasta, que vamos nomear de express, pois o
+          tipo que queremos adicionar é dele.
+        </p>
+        <p>
+          Dentro dessa pasta vamos criar um arquivo nomeado assim:{" "}
+          <strong>index.d.ts</strong>. Dentro desse arquivo, vamos adicionar o
+          seguinte código:
+        </p>
+
+        <pre>
+          <code>
+            {`
+declare namespace Express {
+  export interface Request {
+    user_id: string;
+  }
+}
+              `}
+          </code>
+        </pre>
+        <p>
+          Para finalizar, vamos ter que ir no arquivo tsconfig.json e habilidar
+          o typesRoots e adicionar o caminho da nosso tipagem. Veja como vai
+          ficar:
+        </p>
+        <pre>
+          <code>
+            {`
+"typeRoots": [
+  "./src/@types"
+]
+            `}
+          </code>
+        </pre>
+        <p>
+          Agora para concluir nosso middleware, falta apenas chamar o next, pois
+          já temos certeza que o token foi passado e também já inserimos na
+          nossa requeste um atributo com o id do usuário.
+        </p>
+        <h3>Ultilizando middleware</h3>
+        <p>
+          Agora que nosso middleware está criado, vamos ver como ele seria útil.
+        </p>
+        <p>
+          Vamos criar um outra rota para nossa aplicação. Dentro da nossa pasta
+          controller, vamos criar outro arquivo DetailUserController.ts e dentro
+          vamos escrever o seguinte código:
+        </p>
+        <pre>
+          <code>
+            {`
+import { Request, Response } from "express";
+import { DetailUserService } from "../../services/user/DetailUserService";
+
+class DetailUserController {
+  async handle(req: Request, res: Response) {
+    const id = req.user_id;
+
+    const detailUserService = new DetailUserService();
+
+    const user = await detailUserService.execute(id);
+
+    return res.json(user);
+  }
+}
+
+export { DetailUserController };
+            `}
+          </code>
+        </pre>
+        <p>
+          É praticamente igual os outros controllers, a diferença é que agora
+          temos o user_id disponivel na req e vamos passar para o execute do
+          nosso service que vamos criar da seguinte forma:
+        </p>
+        <pre>
+          <code>
+            {`
+import prismaClient from "../../prisma";
+
+class DetailUserService {
+  execute(id: string) {
+    const user = prismaClient.user.findFirst({
+      where: {
+        id: id,
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+      },
+    });
+
+    return user;
+  }
+}
+
+export { DetailUserService };
+            `}
+          </code>
+        </pre>
+        <p>
+          Nosso service está simplesmente buscando o usuário pelo id que
+          passamos no parâmetro e retornando o usuário.
+        </p>
+        <p>
+          Na nossa rota que vai ter uma mudança maior, veja como vai ficar nosso
+          arquivo de rotas:
+        </p>
+        <pre>
+          <code>
+            {`
+import { Router } from "express";
+
+import { CreateUserController } from "./controllers/user/CreateUserController";
+import { AuthUserController } from "./controllers/user/AuthUserController";
+import { DetailUserController } from "./controllers/user/DetailUserController";
+import { isAuthenticated } from "./middlewares/isAuthenticated";
+
+const router = Router();
+
+router.post("/users", new CreateUserController().handle);
+router.post("/session", new AuthUserController().handle);
+router.get("/me", isAuthenticated, new DetailUserController().handle);
+
+export { router };
+            `}
+          </code>
+        </pre>
+        <p>
+          Na nossa terceira rota estamos passando como parâmetro para o método
+          get 3 argumentos: O caminho, o nosso middleware e por último nosso
+          controller.
+        </p>
+        <p>
+          Nosso middleware, só vai permitir que seja acessada nosso rota /me se
+          o token for passado e estaja imutavel. Isso pode testado em alguma
+          aplicação como o postman.
+        </p>
+      </div>
+      <div className="filter">
+        <h3>Usando Multer para adicionar imagens</h3>
+        <p>
+          No nosso produto, temos o valor banner. Esse valor vai ter o nome da
+          imagem que estará em uma pasta do nosso backend. Para fazer isso vamos
+          ultilizar a biblioteca multer.
+        </p>
+        <p>
+          Para baixar vamos usar os seguintes comandos:{" "}
+          <strong>npm i multer</strong>e <strong>npm i @types/multer -D</strong>
+          . Agora vamos configurar nosso multer.
+        </p>
+        <p>
+          Vamos primeiramente criar dentro do nosso diretório src uma pasta
+          chamada config, e dentro vamos criar uma pasta chamada multer. Veja o
+          código dentro da página:
+        </p>
+        <pre>
+          <code>
+            {`
+import crypto from "crypto";
+import multer from "multer";
+
+import { resolve } from "path";
+
+export default {
+  upload(folder: string) {
+    return {
+      storage: multer.diskStorage({
+        destination: resolve(__dirname, "..", "..", folder),
+        filename: (request, file, callback) => {
+          const fileHash = crypto.randomBytes(16).toString("hex");
+          const fileName = '{fileHash}-{file.originalname}';
+
+          return callback(null, fileName);
+        },
+      }),
+    };
+  },
+};
+            `}
+          </code>
+        </pre>
+        <p>
+          Estamos importando o crypto, o multer e de dentro do path o resolve.
+          Logo abaixo estamos exportando por padrão um objeto que vai ter um
+          método chamado upload. Esse método vai receber o nome de uma pasta
+          como parâmetro. Vamos criar essa pasta dentro do nosso diretório
+          backend. Nesse caso dei o nome de temp.
+        </p>
+        <p>
+          Esse método upload, vai retornar um objeto com apenas uma propriedade:
+          o storage. O valor dessa propriedade vai ser nosso multer, vamos usar
+          o método diskStorage passando um objeto com duas propriedades:
+          destination e filename.
+        </p>
+        <p>
+          Destination vai ter como valor o resolve do path, o resolve vai nos
+          informar qual o caminho da pasta que vamos passar. Os parâmetros
+          passados são o __dirname (ele representa a diretório onde foi
+          declarado), o segundo e o terceiro parâmetro são duas strings, dois
+          pontos cada um. Cada dois pontos sai de uma pasta, então estamos
+          saindo de duas pastas. E por último é o nome da pasta, que será
+          passado como parâmetro para nosso método upload.
+        </p>
+        <p>
+          A propriedade filename vai ser uma função anônima, ela também recebe
+          três parâmetros: request (não vamos ultilizar), o file (será o arquivo
+          que vamos receber da requisição.) e por último uma callback. Essa
+          callback vamos chamar ela como retorno passando null como primeiro
+          parâmetro e o nome que vamos dar para nosso arquivo. Nós estamos
+          tirando essas configurações da{" "}
+          <a
+            href="https://www.npmjs.com/package/multer"
+            target="_blank"
+            rel="noreferrer"
+          >
+            documentação do multer
+          </a>
+          .
+        </p>
+        <p>
+          Para criar o nome do arquivo, vamos primeiro passar um valor hash,
+          para que sempre que mandemos um arquivo para nosso sistema, ele tenha
+          um nome difernte. Então o nome vai ser essa hash e o nome original do
+          arquivo.
+        </p>
+        <h3>Resgatar arquivo da requisição</h3>
+        <p>
+          Agora vamos criar o product, o service não vai ter nenhuma novidade,
+          vamos apenas passar para o create do prismaClient o objeto, com os
+          valores que o controller vai repassar. O nosso controller vai ter uma
+          diferença. Veja:
+        </p>
+        <pre>
+          <code>
+            {`
+import { Request, Response } from "express";
+import { CreateProductService } from "../../services/product/CreateProductService";
+
+class CreateProductController {
+  async handle(req: Request, res: Response) {
+    const { name, price, description, category_id } = req.body;
+
+    const createProductService = new CreateProductService();
+
+    if (!req.file) {
+      throw new Error("Error upload file");
+    } else {
+      const { filename: banner } = req.file;
+
+      const product = await createProductService.execute({
+        name,
+        price,
+        description,
+        banner,
+        category_id,
+      });
+
+      return res.json(product);
+    }
+  }
+}
+
+export { CreateProductController };
+            `}
+          </code>
+        </pre>
+        <p>
+          O banner vai ser a única diferença dos outros controllers. Primeiro
+          estamos verificando se existe um arquivo no req.file, se não, vamos
+          retornar um erro, nós não vamos permitir cadastrar nenhum produto sem
+          imagem. Se existir um arquivo, vamos renomear o filename do arquivo
+          para banner, assim ele será passado para nosso objeto que enviamos
+          para o método execute.
+        </p>
+        <h3>Usando multer</h3>
+        <p>
+          No nosso arquivo de rotas vamos configurar o multer para passar á
+          nossa rota. Ele vai servir como um middleware. Veja como ficou:
+        </p>
+        <pre>
+          <code>
+            {`
+import { Router } from "express";
+import multer from "multer";
+
+import { CreateUserController } from "./controllers/user/CreateUserController";
+import { AuthUserController } from "./controllers/user/AuthUserController";
+import { DetailUserController } from "./controllers/user/DetailUserController";
+
+import { CreateCategoryController } from "./controllers/category/CreateCategoryController";
+import { ListCategoryController } from "./controllers/category/ListCategoryController";
+
+import { CreateProductController } from "./controllers/product/CreateProductController";
+
+import { isAuthenticated } from "./middlewares/isAuthenticated";
+
+import uploadConfig from "./config/multer";
+
+const router = Router();
+
+const upload = multer(uploadConfig.upload("./temp"));
+
+router.post("/users", new CreateUserController().handle);
+router.post("/session", new AuthUserController().handle);
+router.get("/me", isAuthenticated, new DetailUserController().handle);
+
+router.post(
+  "/category",
+  isAuthenticated,
+  new CreateCategoryController().handle
+);
+router.get("/categories", isAuthenticated, new ListCategoryController().handle);
+
+router.post(
+  "/product",
+  isAuthenticated,
+  upload.single("file"),
+  new CreateProductController().handle
+);
+
+export { router };
+            `}
+          </code>
+        </pre>
+        <p>
+          Na segunda linha estamos importando o multer, e nossa última
+          importação é a configuração que fizemos do mesmo.
+        </p>
+        <p>
+          Logo abaixo do nosso router, estamos atribuindo a uma constante upload
+          o multer, passando como parâmetro a nosso método que criamos na
+          confiração do multer. O nosso método vai precisar do nome da pasta
+          onde será armazenada as imagens, nós passamos o ./temp.
+        </p>
+        <p>
+          Agora na hora de criar a rota, vamos passar o caminho, o middleware de
+          autenticação, o nosso mais novo middleware do multer e por último
+          nosso controller.
+        </p>
+      </div>
+      <div className="filter">
+        <h3>Buscar vários dados</h3>
+        <p>
+          Até agora vimos como buscar o um dado por vez com o findFirst do
+          prismaClient. Para buscar vários documentos de uma vez, vamos usar o
+          método findMany.
+        </p>
+        <p>
+          Vamos criar mais um arquivo no nosso diretório product. Esse vai ser
+          para buscar produtos por categorias. O nome que dei foi:
+          ListByCategoryService e ListBayCategoryController.
+        </p>
+        <p>
+          O controller vamos ter uma difernça, pois vamos pegar o valor para
+          passarmos para nosso service do query da requisição. Veja:
+        </p>
+        <pre>
+          <code>
+            {`
+import { Request, Response } from "express";
+import { ListByCategoryService } from "../../services/product/ListByCategoryService";
+
+class ListByCategoryController {
+  async handle(req: Request, res: Response) {
+    const category_id = req.query.category_id as string;
+    const listByCategoryService = new ListByCategoryService();
+
+    const list = await listByCategoryService.execute(category_id);
+
+    return res.json(list);
+  }
+}
+
+export { ListByCategoryController };
+            `}
+          </code>
+        </pre>
+        <p>
+          Quando recebemos o valor da query da requisição, o typescript não sabe
+          qual tipo será, então estamos passando a notação as string para
+          afirmar que esse valor vai ser uma string.
+        </p>
+        <p>
+          No nosso service que vamos ultilizar o método findMany para buscar
+          vários dados de uma vez. Veja:
+        </p>
+        <pre>
+          <code>
+            {`
+import prismaClient from "../../prisma";
+
+class ListByCategoryService {
+  async execute(category_id: string) {
+    const findByCategory = await prismaClient.product.findMany({
+      where: {
+        category_id: category_id,
+      },
+    });
+
+    return findByCategory;
+  }
+}
+
+export { ListByCategoryService };
             `}
           </code>
         </pre>

@@ -129,7 +129,13 @@ export default function Github() {
           comando <strong>npm i lodash</strong> e esperamos baixar todos os
           pacates. Agora precisamos importar essa dependência. Seria assim:
         </p>
-        <pre>const lodash = require('lodash')</pre>
+        <pre>
+          <code>
+            {`
+const lodash = require('lodash')
+            `}
+          </code>
+        </pre>
         <p>
           Uma sintaxe muito simples. Atribuímos a uma constante o nome do módulo
           e em seguida chamamos o método require com o nome do módulo que
@@ -187,9 +193,15 @@ export default function Github() {
           um arquivo com o nome exports.js e escrevermos as seguintes linhas de
           código:
         </p>
-        <pre>this.a = 1</pre>
-        <pre>exports.b = 2</pre>
-        <pre>module.exports.c = 3</pre>
+        <pre>
+          <code>
+            {`
+this.a = 1
+exports.b = 2
+module.exports.c = 3
+            `}
+          </code>
+        </pre>
         <p>
           Essas três propriedades a, b e c estarão disponíveis para exportarmos
           em outros arquivos do nosso projeto.
@@ -198,10 +210,22 @@ export default function Github() {
           Continuando com o exemplo, vamos criar outro arquivo com o nome
           import.js e escrever o seguinte código:
         </p>
-        <pre>const exports = require('./exports')</pre>
-        <pre>console.log(exports)</pre>
+        <pre>
+          <code>
+            {`
+const exports = require('./exports')
+console.log(exports)
+            `}
+          </code>
+        </pre>
         <p>Vamos receber como resposta do nosso console.log o seguinte:</p>
-        <pre>a: 1, b: 2, c: 3</pre>
+        <pre>
+          <code>
+            {`
+a: 1, b: 2, c: 3
+            `}
+          </code>
+        </pre>
         <p>
           Vemos que as atribuições feitas pelas três formas de referenciar o
           módulo foram adicionadas ao objeto.
@@ -228,7 +252,13 @@ export default function Github() {
           instalada, podemos já importar para esse arquivo o path da seguinte
           forma:
         </p>
-        <pre>const path = require('path')</pre>
+        <pre>
+          <code>
+            {`
+const path = require('path'))
+            `}
+          </code>
+        </pre>
         <article>
           <h3>Observação</h3>
           <p>
@@ -249,7 +279,14 @@ export default function Github() {
           está sendo executado. Para entender melhor vamos fazer o seguinte
           script no nosso aquivo path.js:
         </p>
-        <pre>console.log(path.basename(__filename))</pre>
+
+        <pre>
+          <code>
+            {`
+console.log(path.basename(__filename))
+            `}
+          </code>
+        </pre>
         <p>
           Aqui vamos passar para o path a função <strong>basename</strong> que
           serva para obter o nome do arquivo atual. Como parâmetro vamos passar
@@ -262,18 +299,36 @@ export default function Github() {
           informar em qual arquivo que estamos. Essa linha de código irá
           retornar o diretório da pasta em que estamos.
         </p>
-        <pre>console.log(path.dirname(__filename))</pre>
+        <pre>
+          <code>
+            {`
+console.log(path.dirname(__filename))
+            `}
+          </code>
+        </pre>
         <p>
           Para ver as extenções dos nossos arquivos tambem é muito fácil com o
           path. Basta que passemos o método <strong>extname</strong> tambem com
           o __filename como parâmetro.
         </p>
-        <pre>console.log(path.extname(__filename))</pre>
+        <pre>
+          <code>
+            {`
+console.log(path.extname(__filename))
+            `}
+          </code>
+        </pre>
         <p>
           Podemos criar um objeto com informações do nosso arquivo se fizermos
           esse código:
         </p>
-        <pre>console.log(path.parse(__filename))</pre>
+        <pre>
+          <code>
+            {`
+console.log(path.parse(__filename))
+            `}
+          </code>
+        </pre>
         <p>
           O Node.js vai nos retornar um objeto com as principais informações do
           nosso arquivo. Basta usarmos o método <strong>parse</strong> com o
@@ -290,7 +345,13 @@ export default function Github() {
           queremos juntar com o diretório passado(o __dirname é o diretorio
           atual). veja o exempli abaixo:
         </p>
-        <pre>console.log(path.join(__dirname, 'teste', teste.html))</pre>
+        <pre>
+          <code>
+            {`
+console.log(path.join(__dirname, 'teste', teste.html))
+            `}
+          </code>
+        </pre>
         <p>
           Nesse exemplo o join irá retornar o diretório atual e passar uma pasta
           e um arquivo para esse diretório. O Node.js retornará:
@@ -308,8 +369,14 @@ export default function Github() {
           criamos. Nesse arquivo vamos inportar tanto o fs quanto o path que é
           nessesário para ultilizar o fs.
         </p>
-        <pre>const fs = require('fs')</pre>
-        <pre>const path = require('path')</pre>
+        <pre>
+          <code>
+            {`
+const fs = require('fs')
+const path = require('path')
+            `}
+          </code>
+        </pre>
         <p>
           Para começar vamos criar uma pasta usando um método do fs chamado{" "}
           <strong>mkdir</strong>. Aqui vamos precisar do método join do path.
@@ -319,9 +386,14 @@ export default function Github() {
           vamos usar uma callback para tratar erros. Veja o exemplo:
         </p>
         <pre>
-          fs.mkdir(path.join(__dirname, '/teste'), (error) = &gt; const msg =
-          error ? console.log(error) : console.log(`Pasta criada!`))
+          <code>
+            {`
+fs.mkdir(path.join(__dirname, '/teste'), (error) = &gt; const msg =
+error ? console.log(error) : console.log('Pasta criada!'))
+            `}
+          </code>
         </pre>
+
         <p>
           Nesse exemplo vemos que foram passados dois parâmetros para o método
           mkdir o path com o caminho que queremos construir e uma callback que
@@ -388,7 +460,7 @@ export default function Github() {
           uma porta. Porta servirá para informar para nossa máquina onde vamos
           rodar esses processos que serão passados no nosso back-end.
         </p>
-        <pre>const http = require('http') const port = 8080</pre>
+
         <p>
           Nosso próximo passo será atribuir para uma constante nosso método http
           e chamar a função
