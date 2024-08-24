@@ -1319,6 +1319,134 @@ export { ListByCategoryService };
           </code>
         </pre>
       </div>
+      <div className="filter">
+        <h3>Deletar dados</h3>
+        <p>
+          O nosso projeto vai ter mais duas tabelas: orders e items. Criamos
+          assim no nosso arquivo schema.prisma:
+        </p>
+        <pre>
+          <code>
+            {`
+model Order{
+  id String @id @default(uuid())
+  table Int
+  status Boolean @default(false)
+  draft Boolean @default(true)
+  name String?
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  @@map("orders")
+  items Item[]
+}
+
+model Item{
+  id String @id @default(uuid())
+  amount Int
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  order Order @relation(fields: [order_id], references: [id])
+  product Product @relation(fields: [product_id], references: [id])
+
+   @@map("items")
+   order_id String
+   product_id String
+}
+            `}
+          </code>
+        </pre>
+        <p>
+          Nossa tabela orders, além do create e update (valores padrões de todas
+          as tabelas) vai ter uma table (onde vamos passar o número da mesa),
+          status (vai informar se o pedido foi concluído ou não), draft (vai
+          servir como um parâmetro para saber se a ordem, vai, ou não, aparecer
+          para ser preparado o pedido) e name (vai ser um valor opcional, caso
+          queira pegar o nome do cliente).
+        </p>
+        <p>
+          O status vai ter o valor false como padrão, pois vai ser concluído
+          posteriormente (quando o cliente pedir a conta). E o draft vai ter o
+          valor true, pois caso seja passado para false, quer dizer que a ordem
+          já foi mandada para cozinha e não é mais um rascunho.
+        </p>
+        <p>
+          Por último, vai ter uma foren key de items, para sabermos quais serão
+          os itens do pedido, vamos passar para a order o id dos itens que o
+          cliente pedir.
+        </p>
+        <p>
+          A tabela items vai ter apenas o amount(quantidade de produtos que cada
+          item lançado). Vai ter duas foren keys. O order_id(é a ordem que esse
+          item pertence ) e product_id (o produto é o item em si).
+        </p>
+        <h4>Método delete</h4>
+        <p>
+          Quando criarmos uma ordem e o cliente desistir de pedir, vamos ter que
+          deletar o pedido criado.
+        </p>
+        <p>
+          Vamos criar um controller com o seguinte nome:
+          DeleteOrderController.ts, nesse arquivo não vai ter nada de novo,
+          vamos apenas pegar o order_id, será recebido do req.query, Veja:
+        </p>
+        <pre>
+          <code>
+            {`
+import { Request, Response } from "express";
+import { RemoveOrderService } from "../../services/order/RemoveOrderService";
+
+class RemoveOrderController {
+  async handle(req: Request, res: Response) {
+    const order_id = req.query.order_id as string;
+
+    const removeOrderService = new RemoveOrderService();
+
+    const order = await removeOrderService.execute(order_id);
+
+    return res.json(order);
+  }
+}
+
+export { RemoveOrderController };
+            `}
+          </code>
+        </pre>
+        <p>
+          No service que iremos ultilizar o método delete do prismaClient. Veja:
+        </p>
+        <pre>
+          <code>
+            {`
+import prismaClient from "../../prisma";
+
+class RemoveOrderService {
+  async execute(order_id: string) {
+    const order = await prismaClient.order.delete({
+      where: {
+        id: order_id,
+      },
+    });
+
+    return order;
+  }
+}
+
+export { RemoveOrderService };
+            `}
+          </code>
+        </pre>
+        <p>
+          Nosso projeto tem a funcionalidade de adicionar e deletar itens de uma
+          order, já vimos como fazer esses funcionalidades, de criar e deletar
+          dados em uma tabela. Então não vou mostrar nessas anotações como
+          fazer. Mas caso queira ver como, vá no nosso{" "}
+          <a href="#" target="_blank" rel="">
+            repósitorio do projeto.
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

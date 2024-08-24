@@ -8,6 +8,7 @@
   opacity: 0;
   animation: slideBottom 0.8s ease forwards;
   animation-delay: 0.4s;
+  z-index: 3;
 }
 
 .div-search input {

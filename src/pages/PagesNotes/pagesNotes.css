@@ -17,6 +17,11 @@
   font-size: 2.5rem;
 }
 
+.pages-notes-text {
+  position: relative;
+  z-index: 2;
+}
+
 .pages-notes-text h2 {
   padding: 30px 0 10px 0;
   font-size: 2.2rem;
@@ -77,6 +82,7 @@
   margin: 15px 0;
   font-size: 1.1rem;
   color: var(--color-4);
+  position: relative;
 }
 
 .pages-notes-text pre code {
@@ -153,8 +159,8 @@
   display: flex;
   position: fixed;
   top: 25%;
-  right: 0;
   z-index: 1;
+  right: 0;
   opacity: 0;
   animation: sliderLeft 0.8s ease forwards;
   animation-delay: 0.6s;
@@ -176,6 +182,8 @@
   padding: 10px 0;
   margin: 30px 0;
   border-radius: 4px;
+  position: relative;
+  z-index: 2;
 }
 
 .exemple button {
@@ -227,8 +235,8 @@
 
 .pages-notes-container .exemple ul li {
   list-style: none;
-  min-width: 350px;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: space-between;
   background-color: #ffffffd7;
