@@ -1439,12 +1439,111 @@ export { RemoveOrderService };
         </pre>
         <p>
           Nosso projeto tem a funcionalidade de adicionar e deletar itens de uma
-          order, já vimos como fazer esses funcionalidades, de criar e deletar
+          order, já vimos como fazer essas funcionalidades, criar e deletar
           dados em uma tabela. Então não vou mostrar nessas anotações como
-          fazer. Mas caso queira ver como, vá no nosso{" "}
-          <a href="#" target="_blank" rel="">
+          fazer. Mas caso queira ver como foi criado, vá no nosso
+          <a
+            href="https://github.com/humbertomonteiro/pizza-backend"
+            target="_blank"
+            rel="noreferrer"
+          >
             repósitorio do projeto.
           </a>
+        </p>
+      </div>
+      <div className="filter">
+        <h3>Atualizar dados</h3>
+        <p>
+          Para atualizarmos dados com nosso prisma client, vamos ultilizar o
+          método update. Nosso projeto tem uma tabela order, essa tabela, vai
+          ter um dado que informa se o pedido é pra começar a ser feito ou não.
+          Esse dado é o draft. Quando o garçon abrir um pedido, ele estará como
+          true e quando o pedido for feito, vai ficar false, informando que não
+          é mais um rascunho e sim um pedido em si.
+        </p>
+        <p>Nós vamos criar esse funcionalidade da seguinte forma:</p>
+        <pre>
+          <code>
+            {`
+import prismaClient from "../../prisma";
+
+class SendOrderServise {
+  async execute(order_id: string) {
+    const order = await prismaClient.order.update({
+      where: {
+        id: order_id,
+      },
+      data: {
+        draft: false,
+      },
+    });
+
+    return order;
+  }
+}
+
+export { SendOrderServise };
+            `}
+          </code>
+        </pre>
+        <p>
+          Nosso controller vai passar para o service acima o order_id do body da
+          requisição.
+        </p>
+        <p>
+          O método update vai receber duas propriedades: o where(vai encontrar
+          qual o order_id a gente quer mudar), e a data(vai de fato alterar o
+          dado da tabela).
+        </p>
+      </div>
+      <div className="filter">
+        <h3>Consulta aninhada</h3>
+        <p>
+          Nosso banco relacional, serve para que possamos relacionar tabelas, e
+          com isso buscar dados de tabelas que são parêntes. Na nossa aplicação,
+          vai ter uma funcionalidade de detalhar o pedido da mesa.
+        </p>
+        <p>
+          O pedido é a tabela order, mas os itens vão estar na tabela items.
+          Então, veja como vamos fazer para buscar todos os dados que queremos,
+          para que, quem for preparar o pedido, veja tudo detalhado.
+        </p>
+        <pre>
+          <code>
+            {`
+import prismaClient from "../../prisma";
+
+class DetailOrderService {
+  async execute(order_id: string) {
+    const order = await prismaClient.item.findMany({
+      where: {
+        order_id: order_id,
+      },
+      include: {
+        product: true,
+        order: true,
+      },
+    });
+
+    return order;
+  }
+}
+
+export { DetailOrderService };
+            `}
+          </code>
+        </pre>
+        <p>
+          Aqui, para que consigamos resgatar os dados das tabelas que queremos,
+          vamos ultilizar o findMany, pois poderão ser vários pedidos, e vamos
+          buscar da tabela items, pois lá que usamos as foren keys dos produtos
+          e da ordem.
+        </p>
+        <p>
+          O where, vai nos mostrar qual order_id queremos ver, e o includes vai
+          nos mostar quais as tabelas que queremos receber. Vamos adicionar
+          tanto o produto, pois queremos ver quais os produtos que deverão ir
+          para mesa, e támbem a order, é onde fica o número da mesa.
         </p>
       </div>
     </div>
